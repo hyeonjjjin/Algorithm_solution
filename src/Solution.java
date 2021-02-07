@@ -1,3 +1,5 @@
+import org.w3c.dom.ranges.Range;
+
 import java.util.*;
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -21,21 +23,25 @@ class Solution {
     }
 
     public static int solution2(int n) {//2021.02.06
-        List<Integer> num = new ArrayList<>();
-        int answer = 0;
-        while(n/3>=1) {
-            num.add(n % 3);
-            n/=3;
-        }
-        num.add(n);
-        for (int i=0;i<num.size();i++){
-            answer+=(num.get(i))*Math.pow(3, num.size()-i-1);
-        }
-        return answer;
+        String third = Integer.toString(n, 3);
+        StringBuffer sb = new StringBuffer(third);
+        String reversed = sb.reverse().toString();
+
+        return Integer.parseInt(reversed,3);
+    }
+
+    public static String solution3(String s) {
+        if(s.length()%2==0) return s.substring((s.length()/2)-1,s.length()/2+1);
+        else return s.substring(s.length()/2,s.length()/2+1);
+        //String answer = "";
+        //return answer;
     }
 
     public static void main(String[] args) {
         System.out.println(solution2(45));
+        System.out.println(solution3("12345"));
+
+
     }
 }
 
