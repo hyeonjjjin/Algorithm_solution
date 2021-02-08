@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.TreeSet;
+import java.util.List;
 
 class Solution {
     public int[] solution1(int[] numbers) {//2021.02.02
@@ -33,15 +34,27 @@ class Solution {
     public static String solution3(String s) {
         if(s.length()%2==0) return s.substring((s.length()/2)-1,s.length()/2+1);
         else return s.substring(s.length()/2,s.length()/2+1);
-        //String answer = "";
-        //return answer;
+    }
+    public static long solution4(int a, int b) {
+        if(a*b>=0) return (a+b)*(Math.abs(a-b)+1)/2;
+        else if(a<0) return (a+b)*(Math.abs(b-a)+1)/2;
+        else return (a+b)*(Math.abs(a-b)+1)/2;
+    }
+    public static String solution5(int n) {
+        ArrayList<String> list = new ArrayList<String>();
+        for (int i=0;i<n/2;i++){
+            list.add("수박");
+        }
+        if(n%2==1) list.add("수");
+        String answer = list.toString();
+        return answer;
     }
 
     public static void main(String[] args) {
         System.out.println(solution2(45));
         System.out.println(solution3("12345"));
-
-
+        System.out.println(solution4(-5,0));
+        System.out.println(solution5(3));
     }
 }
 
