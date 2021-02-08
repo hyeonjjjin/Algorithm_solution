@@ -41,12 +41,9 @@ class Solution {
         else return (a+b)*(Math.abs(a-b)+1)/2;
     }
     public static String solution5(int n) {
-        ArrayList<String> list = new ArrayList<String>();
-        for (int i=0;i<n/2;i++){
-            list.add("수박");
-        }
-        if(n%2==1) list.add("수");
-        String answer = list.toString();
+        String answer = "";
+        for (int i=0;i<n/2;i++) answer=answer.concat("수박");
+        if(n%2==1) answer=answer.concat("수");
         return answer;
     }
 
