@@ -47,16 +47,17 @@ class Solution {
         //return answer;
         return new String(new char [n/2+1]).replace("\0", "수박").substring(0,n);
     }
+    public static int solution6(String s) {
+        return Integer.parseInt(s);
+    }
 
     public static void main(String[] args) {
         System.out.println(solution2(45));
         System.out.println(solution3("12345"));
         System.out.println(solution4(-5,0));
         System.out.println(solution5(3));
-        String test = new String(new char [3]).replace("\0", "수박수박수박").substring(0,5);
-        System.out.println(test.length());
-        System.out.println(test);
-        System.out.println(test.charAt(3));
+        System.out.println(solution6("89425"));
+
     }
 }
 
