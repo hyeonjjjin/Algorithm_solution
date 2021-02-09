@@ -41,10 +41,12 @@ class Solution {
         else return (a+b)*(Math.abs(a-b)+1)/2;
     }
     public static String solution5(int n) {
+        /*내 풀이
         String answer = "";
         for (int i=0;i<n/2;i++) answer=answer.concat("수박");
         if(n%2==1) answer=answer.concat("수");
-        //return answer;
+        //return answer;*/
+        //다른사람 풀이
         return new String(new char [n/2+1]).replace("\0", "수박").substring(0,n);
     }
     public static int solution6(String s) {
