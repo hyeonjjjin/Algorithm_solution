@@ -53,13 +53,24 @@ class Solution {
         return Integer.parseInt(s);
     }
 
+    //이거는 풀었다 하기도 민망한디,,
+    public static int solution7(int[] a, int[] b){
+        int answer = 0;
+        for(int i=0;i<a.length;i++)
+            answer+=a[i]*b[i];
+        return answer;
+    }
+
     public static void main(String[] args) {
         System.out.println(solution2(45));
         System.out.println(solution3("12345"));
         System.out.println(solution4(-5,0));
         System.out.println(solution5(3));
         System.out.println(solution6("89425"));
-
+        int a[]={1,2,3,4};
+        int b[]={-3,-1,0,2};
+        System.out.println(solution7(a,b));
     }
+
 }
 
