@@ -60,8 +60,16 @@ class Solution {
             answer+=a[i]*b[i];
         return answer;
     }
+    public static int solution8(int n) {
+        if(n==0||n==1) return n;
+        int answer = n;
+        for(int i=n-1;i>0;i--){
+            if(n%i==0) answer+=i;
+        }
+        return answer;
+    }
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         System.out.println(solution2(45));
         System.out.println(solution3("12345"));
         System.out.println(solution4(-5,0));
@@ -70,6 +78,7 @@ class Solution {
         int a[]={1,2,3,4};
         int b[]={-3,-1,0,2};
         System.out.println(solution7(a,b));
+        System.out.println(solution8(12));
     }
 
 }
