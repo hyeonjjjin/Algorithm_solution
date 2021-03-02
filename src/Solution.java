@@ -69,14 +69,17 @@ class Solution {
         return answer;
     }
     public static String solution9(String s) {
+        String answer = "";
         String[] s_tmps = s.split(" ");
         String s_upper = s.toUpperCase();
         System.out.println(s_tmps.length);
         for(int i=0;i<(int)(s_tmps.length/2)+1;i++){
-            //s_tmps[i]
+            for(int k=0;k<s_tmps[i].length();k++) {
+                answer = s_tmps[i].toUpperCase().substring(k);
+            }
         }
 
-        String answer = "";
+
         return answer;
     }
 
