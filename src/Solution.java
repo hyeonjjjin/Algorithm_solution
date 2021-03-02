@@ -74,7 +74,7 @@ class Solution {
         String[] s_space = s.split("[^ ]+");
 
         System.out.println(s_tmps.length);
-        System.out.println(s_space[0]+"d");
+        System.out.println(s_space[1]+"d");
         for(int i=0;i<s_tmps.length;i++){
             for(int k=1;k<=s_tmps[i].length();k++) {
                 if(k%2==1) answer = answer.concat(s_tmps[i].toUpperCase().substring(k-1,k));
@@ -103,7 +103,7 @@ class Solution {
         int b[]={-3,-1,0,2};
         System.out.println(solution7(a,b));
         System.out.println(solution8(12));
-        System.out.println(solution9("try  hello world"));
+        System.out.println(solution9("try  hello world   aVCde"));
 
         }
 
