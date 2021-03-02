@@ -71,16 +71,21 @@ class Solution {
     public static String solution9(String s) {
         String answer = "";
         String[] s_tmps = s.split(" ");
-        String s_upper = s.toUpperCase();
         System.out.println(s_tmps.length);
-        for(int i=0;i<(int)(s_tmps.length/2)+1;i++){
-            for(int k=0;k<s_tmps[i].length();k++) {
-                answer = s_tmps[i].toUpperCase().substring(k);
+        for(int i=0;i<s_tmps.length;i++){
+            for(int k=1;k<=s_tmps[i].length();k++) {
+                if(k%2==1) answer = answer.concat(s_tmps[i].toUpperCase().substring(k-1,k));
+                else answer = answer.concat(s_tmps[i].substring(k-1,k));
+
             }
+            System.out.println(answer+" "+answer.length());
+            answer = answer.concat(" ");
         }
 
+        return answer.substring(0,answer.length());
 
-        return answer;
+
+        //return answer;
     }
 
         public static void main(String[] args) {
