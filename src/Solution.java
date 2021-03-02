@@ -68,6 +68,17 @@ class Solution {
         }
         return answer;
     }
+    public static String solution9(String s) {
+        String[] s_tmps = s.split(" ");
+        String s_upper = s.toUpperCase();
+        System.out.println(s_tmps.length);
+        for(int i=0;i<(int)(s_tmps.length/2)+1;i++){
+            //s_tmps[i]
+        }
+
+        String answer = "";
+        return answer;
+    }
 
         public static void main(String[] args) {
         System.out.println(solution2(45));
@@ -79,7 +90,9 @@ class Solution {
         int b[]={-3,-1,0,2};
         System.out.println(solution7(a,b));
         System.out.println(solution8(12));
-    }
+        System.out.println(solution9("try hello world"));
+
+        }
 
 }
 
