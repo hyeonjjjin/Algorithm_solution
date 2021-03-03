@@ -79,7 +79,6 @@ class Solution {
             for(int k=0;k<s_tmps[i].length();k++) {
                 if(k%2==0) answer = answer.concat(s_tmps[i].toUpperCase().substring(k,k+1));
                 else answer = answer.concat(s_tmps[i].toLowerCase().substring(k,k+1));
-
             }
             System.out.println(answer+" "+answer.length());
 
