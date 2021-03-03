@@ -70,15 +70,15 @@ class Solution {
     }
     public static String solution9(String s) {
         String answer = "";
-        String[] s_tmps = s.split("[ ]+");
-        String[] s_space = s.split("[^ ]+");
+        String[] s_tmps = s.split("[ ]+",-1);
+        String[] s_space = s.split("[^ ]+",-1);
 
         System.out.println(s_tmps.length);
         System.out.println(s_space[1]+"d");
         for(int i=0;i<s_tmps.length;i++){
-            for(int k=1;k<=s_tmps[i].length();k++) {
-                if(k%2==1) answer = answer.concat(s_tmps[i].toUpperCase().substring(k-1,k));
-                else answer = answer.concat(s_tmps[i].toLowerCase().substring(k-1,k));
+            for(int k=0;k<s_tmps[i].length();k++) {
+                if(k%2==0) answer = answer.concat(s_tmps[i].toUpperCase().substring(k,k+1));
+                else answer = answer.concat(s_tmps[i].toLowerCase().substring(k,k+1));
 
             }
             System.out.println(answer+" "+answer.length());
