@@ -82,10 +82,12 @@ class Solution {
     }
 
     public static String solution9(String s) {
+        int k;
         for(int i=0;i<s.length();i++){
             if (s.charAt(i)==' ') {continue; }
-            int k;
+            System.out.println("i="+i);
             for(k=i;k<s.length();k++) {
+                if(s.charAt(k)==' ') break;
                 if((k-i)%2==0) s=toUpperAt(s,k);
                 else s = toLowerAt(s,k);
             }
