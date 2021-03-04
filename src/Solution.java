@@ -72,17 +72,20 @@ class Solution {
         String answer = "";
         String[] s_tmps = s.split("[ ]+",-1);
         String[] s_space = s.split("[^ ]+",-1);
-
+        int pass =0;
         System.out.println(s_tmps.length);
         System.out.println(s_space[1]+"d");
         for(int i=0;i<s_tmps.length;i++){
+            if (s_tmps[i]== ""||s_tmps[i].charAt(0)==' ') {System.out.println(s.charAt(i)+"continue");pass++;continue; }
+
             for(int k=0;k<s_tmps[i].length();k++) {
+                //if(s.charAt(k)==' ') break;
                 if(k%2==0) answer = answer.concat(s_tmps[i].toUpperCase().substring(k,k+1));
                 else answer = answer.concat(s_tmps[i].toLowerCase().substring(k,k+1));
             }
             System.out.println(answer+" "+answer.length());
 
-            if(i<s_tmps.length-1) answer = answer.concat(s_space[i+1]);
+            if(i<s_tmps.length-1) answer = answer.concat(s_space[i+1-pass]);
             //s.substring()
         }
 
@@ -102,7 +105,7 @@ class Solution {
         int b[]={-3,-1,0,2};
         System.out.println(solution7(a,b));
         System.out.println(solution8(12));
-        System.out.println(solution9("try  hello world   aVCde"));
+        System.out.println(solution9("  try  hello world   aVCde    "));
 
         }
 
