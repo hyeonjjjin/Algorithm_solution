@@ -68,21 +68,30 @@ class Solution {
         }
         return answer;
     }
+    public static String toUpperAt(String str, int index)
+    {
+        StringBuilder sb =new StringBuilder(str);
+        sb.setCharAt(index,Character.toUpperCase(str.charAt(index)));
+        return sb.toString();
+    }
+    public static String toLowerAt(String str, int index)
+    {
+        StringBuilder sb =new StringBuilder(str);
+        sb.setCharAt(index,Character.toLowerCase(str.charAt(index)));
+        return sb.toString();
+    }
+
     public static String solution9(String s) {
-        String answer = "";
-        String[] s_tmps = s.split("[ ]+",-1);
-        String[] s_space = s.split("[^ ]+",-1);
-        int pass =0;
-        for(int i=0;i<s_tmps.length;i++){
-            if (s_tmps[i]== ""||s_tmps[i].charAt(0)==' ') {pass++;continue; }
-            for(int k=0;k<s_tmps[i].length();k++) {
-                if(k%2==0) answer = answer.concat(s_tmps[i].toUpperCase().substring(k,k+1));
-                else answer = answer.concat(s_tmps[i].toLowerCase().substring(k,k+1));
+        for(int i=0;i<s.length();i++){
+            if (s.charAt(i)==' ') {continue; }
+            int k;
+            for(k=i;k<s.length();k++) {
+                if((k-i)%2==0) s=toUpperAt(s,k);
+                else s = toLowerAt(s,k);
             }
-            System.out.println(answer+" "+answer.length());
-            if(i<s_tmps.length-1) answer = answer.concat(s_space[i+1-pass]);
+            i=k;
         }
-        return answer;
+        return s;
     }
 
         public static void main(String[] args) {
