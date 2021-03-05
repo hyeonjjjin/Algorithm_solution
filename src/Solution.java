@@ -106,7 +106,7 @@ class Solution {
         int b[]={-3,-1,0,2};
         System.out.println(solution7(a,b));
         System.out.println(solution8(12));
-        System.out.println(solution9("  try  hello world   aVCde    "));
+        System.out.println(solution9("  try  hello world   aVCde    a"));
 
         }
 
