@@ -95,6 +95,14 @@ class Solution {
         }
         return s;
     }
+    public static int solution10(int n){
+        int answer = 0;
+
+        // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+        System.out.println("Hello Java");
+
+        return answer;
+    }
 
         public static void main(String[] args) {
         System.out.println(solution2(45));
@@ -107,7 +115,7 @@ class Solution {
         System.out.println(solution7(a,b));
         System.out.println(solution8(12));
         System.out.println(solution9("  try  hello world   aVCde    a"));
-
+        System.out.println(solution10(123));
         }
 
 }
