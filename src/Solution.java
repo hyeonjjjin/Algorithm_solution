@@ -85,7 +85,6 @@ class Solution {
         int k;
         for(int i=0;i<s.length();i++){
             if (s.charAt(i)==' ') {continue; }
-            System.out.println("i="+i);
             for(k=i;k<s.length();k++) {
                 if(s.charAt(k)==' ') break;
                 if((k-i)%2==0) s=toUpperAt(s,k);
@@ -97,7 +96,9 @@ class Solution {
     }
 
     public static int solution10(int n){
-        return Integer.toString(n).chars().map(Character::getNumericValue).sum();
+        return Integer.toString(n).chars().map(i->i-'0').sum();
+        //
+
     }
 
         public static void main(String[] args) {
