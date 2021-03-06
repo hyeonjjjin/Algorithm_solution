@@ -97,7 +97,10 @@ class Solution {
 
     public static int solution10(int n){
         return Integer.toString(n).chars().map(i->i-'0').sum();
-        //
+        // 123 -> "123" -> '1' '2' '3' -> 1 2 3 -> sum
+        //chars() 함수는 string 형태로 바꾼 n을 스트림으로 만드는거야
+        //스트림이니까 map 함수는 순서대로 람다식 적용할 수 있지 그래서 i->i-'0' 가능쓰, Character::getNumbericValue 도 가능해
+        //그리고 다 더하는거
 
     }
 
