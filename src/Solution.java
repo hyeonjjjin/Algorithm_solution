@@ -95,13 +95,9 @@ class Solution {
         }
         return s;
     }
+
     public static int solution10(int n){
-        int answer = 0;
-
-        // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-        System.out.println("Hello Java");
-
-        return answer;
+        return Integer.toString(n).chars().map(Character::getNumericValue).sum();
     }
 
         public static void main(String[] args) {
