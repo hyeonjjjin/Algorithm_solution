@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.TreeSet;
 import java.util.List;
+import java.util.stream.Stream;
 
 class Solution {
     public int[] solution1(int[] numbers) {//2021.02.02
@@ -103,6 +104,16 @@ class Solution {
         //그리고 다 더하는거
 
     }
+    public static int[] solution11(long n){
+        StringBuffer stb = new StringBuffer();
+        String[] s = stb.append(n).reverse().toString().split("");//StringBuffer 변수로 뒤집고 String[]로 변환
+        int[] answer = Arrays.stream(s).mapToInt(Integer::parseInt).toArray();//stream 으로 Integer>int, int[]로 변환
+        return answer;
+/*        int[] answer = {};
+        //answer = list.toArray(new int[list.size()]);
+        int[] a = {1,2};
+        return a;'''
+  */  }
 
         public static void main(String[] args) {
         System.out.println(solution2(45));
@@ -116,6 +127,7 @@ class Solution {
         System.out.println(solution8(12));
         System.out.println(solution9("  try  hello world   aVCde    a"));
         System.out.println(solution10(123));
+        System.out.println(solution11(1234));
         }
 
 }
