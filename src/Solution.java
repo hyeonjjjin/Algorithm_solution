@@ -141,7 +141,7 @@ class Solution {
     }
 
     public static boolean solution15(int x) {
-        return (x%(Integer.toString(x).chars().map(i->i-'0').sum())==0)? true:false;
+        return (x % (Integer.toString(x).chars().map(i->i-'0').sum()) == 0);
     }
 
         public static void main(String[] args) {
