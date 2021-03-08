@@ -117,7 +117,9 @@ class Solution {
         if(Math.sqrt(n) == (int)(Math.sqrt(n))) return (long) Math.pow(Math.sqrt(n)+1,2);
         else return -1;
     }
-
+    public static double solution13(int[] arr) {
+        return Arrays.stream(arr).sum()/(double)arr.length;
+    }
         public static void main(String[] args) {
         System.out.println(solution2(45));
         System.out.println(solution3("12345"));
@@ -132,7 +134,8 @@ class Solution {
         System.out.println(solution10(123));
         //System.out.println(solution11(1234));
         System.out.println(solution12(121));
-
+        int[] arr ={1,2,3,4};
+        System.out.println(solution13(arr));
         }
 
 }
