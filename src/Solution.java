@@ -139,6 +139,11 @@ class Solution {
     public static int solution14(int num) {
         return (int)solution14_jg(num);
     }
+
+    public static boolean solution15(int x) {
+        return (x%(Integer.toString(x).chars().map(i->i-'0').sum())==0)? true:false;
+    }
+
         public static void main(String[] args) {
         System.out.println(solution2(45));
         System.out.println(solution3("12345"));
@@ -156,6 +161,8 @@ class Solution {
         int[] arr ={1,2,3,4};
         System.out.println(solution13(arr));
         System.out.println(solution14(626331));
+        System.out.println(solution15(13));
+
         }
 
 }
