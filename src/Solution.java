@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.TreeSet;
 import java.util.List;
+import java.lang.Math;
 import java.util.stream.Stream;
 
 class Solution {
@@ -109,11 +110,13 @@ class Solution {
         String[] s = stb.append(n).reverse().toString().split("");//StringBuffer 변수로 뒤집고 String[]로 변환
         int[] answer = Arrays.stream(s).mapToInt(Integer::parseInt).toArray();//stream 으로 Integer>int, int[]로 변환
         return answer;
-/*        int[] answer = {};
-        //answer = list.toArray(new int[list.size()]);
-        int[] a = {1,2};
-        return a;'''
-  */  }
+    }
+
+
+    public static long solution12(long n){
+        if(Math.sqrt(n) == (int)(Math.sqrt(n))) return (long) Math.pow(Math.sqrt(n)+1,2);
+        else return -1;
+    }
 
         public static void main(String[] args) {
         System.out.println(solution2(45));
@@ -127,7 +130,9 @@ class Solution {
         System.out.println(solution8(12));
         System.out.println(solution9("  try  hello world   aVCde    a"));
         System.out.println(solution10(123));
-        System.out.println(solution11(1234));
+        //System.out.println(solution11(1234));
+        System.out.println(solution12(121));
+
         }
 
 }
