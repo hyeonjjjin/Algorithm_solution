@@ -120,6 +120,25 @@ class Solution {
     public static double solution13(int[] arr) {
         return Arrays.stream(arr).sum()/(double)arr.length;
     }
+
+    public static int count=0;
+    public static int answer14;
+
+    public static long solution14_jg(long num){
+        System.out.println(num+" "+count);
+        if(count>500) answer14= -1;
+        else if (num==1) answer14= count;
+        else if (num%2==0) {
+            System.out.println("짝수네");
+            count++;solution14_jg(num/=2);}
+        else {
+            System.out.println("홀수네");
+            count++; solution14_jg(num=num*3+1);}
+        return (int)answer14;
+    }
+    public static int solution14(int num) {
+        return (int)solution14_jg(num);
+    }
         public static void main(String[] args) {
         System.out.println(solution2(45));
         System.out.println(solution3("12345"));
@@ -136,6 +155,7 @@ class Solution {
         System.out.println(solution12(121));
         int[] arr ={1,2,3,4};
         System.out.println(solution13(arr));
+        System.out.println(solution14(626331));
         }
 
 }
