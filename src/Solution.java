@@ -144,15 +144,23 @@ class Solution {
         return (x % (Integer.toString(x).chars().map(i->i-'0').sum()) == 0);
     }
 
-        public static void main(String[] args) {
+    public static String solution16(String phone_number){
+        return "********************".substring(0,phone_number.length()-4)+phone_number.substring(phone_number.length()-4);
+    }
+
+
+
+    //여러줄 -tab : shift+tap
+
+    public static void main(String[] args) {
         System.out.println(solution2(45));
         System.out.println(solution3("12345"));
         System.out.println(solution4(-5,0));
         System.out.println(solution5(3));
         System.out.println(solution6("89425"));
-        int a[]={1,2,3,4};
-        int b[]={-3,-1,0,2};
-        System.out.println(solution7(a,b));
+        int c[]={1,2,3,4};
+        int d[]={-3,-1,0,2};
+        System.out.println(solution7(c,d));
         System.out.println(solution8(12));
         System.out.println(solution9("  try  hello world   aVCde    a"));
         System.out.println(solution10(123));
@@ -162,8 +170,22 @@ class Solution {
         System.out.println(solution13(arr));
         System.out.println(solution14(626331));
         System.out.println(solution15(13));
+        System.out.println(solution16("4444"));
 
-        }
+        //solution17
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        String answer = "*";
+        for(int i=1;i<a;i++)
+            answer+="*";
+        for(int j=0;j<b;j++)
+            System.out.println(answer);
+//3
+// 4System.out.println(a + b);
+
+
+    }
 
 }
 
