@@ -153,18 +153,24 @@ class Solution {
     public static String solution16(String phone_number){
         return "********************".substring(0,phone_number.length()-4)+phone_number.substring(phone_number.length()-4);
     }
-    public static StringBuffer sum;
-    public static int make_sum_st(int[] nums,int start,int repeat,int sumOfTwo){
-        for(int i=start;i<nums.length;i++,repeat++)
-            sum.append(sumOfTwo+nums[i]);
-        return 0;
+
+    public static boolean primeCheck(int num){
+        for(int i=2;i<=Math.sqrt(num);i++){
+            if(num%i==0) return false;
+        }
+        return true;
     }
+
+
     public static int solution18(int[] nums) {
-        int[] set={0,1,2};
-        int sumOfTwo;
-        sumOfTwo = nums[set[0]]+nums[set[1]];
-        make_sum_st(nums,set[2],0,sumOfTwo);
-        return 0;
+        int answer=0;
+        for(int i=0;i<nums.length-2;i++){
+            for(int j=i+1;j<nums.length-1;j++){
+                for(int k=j+1;k<nums.length;k++)
+                    if(primeCheck(nums[i]+nums[j]+nums[k])) answer++;
+            }
+        }
+        return answer;
     }
 
     //여러줄 -tab : shift+tap
@@ -191,6 +197,7 @@ class Solution {
         System.out.println(solution16("4444"));
 
         //solution17
+        /*
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
@@ -199,6 +206,9 @@ class Solution {
             answer+="*";
         for(int j=0;j<b;j++)
             System.out.println(answer);
+        */
+        int[] nums={1,2,7,6,4};
+        System.out.println(solution18(nums));
 //3
 // 4System.out.println(a + b);
 
