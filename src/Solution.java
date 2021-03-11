@@ -157,13 +157,13 @@ class Solution {
     public static int make_sum_st(int[] nums,int start,int repeat,int sumOfTwo){
         for(int i=start;i<nums.length;i++,repeat++)
             sum.append(sumOfTwo+nums[i]);
-
+        return 0;
     }
     public static int solution18(int[] nums) {
         int[] set={0,1,2};
-
-        sum[0] = nums[set[0]]+nums[set[1]];
-        make_sum_st(nums,set[2],0,sum[0]);
+        int sumOfTwo;
+        sumOfTwo = nums[set[0]]+nums[set[1]];
+        make_sum_st(nums,set[2],0,sumOfTwo);
         return 0;
     }
 
