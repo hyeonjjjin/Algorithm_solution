@@ -96,6 +96,17 @@ class Solution {
         }
         return s;
     }
+    public static String solution9_nam(String s) {
+        String answer = "";
+        int cnt = 0;
+        String[] array = s.split("");
+
+        for(String ss : array) {
+            System.out.println(ss);
+        }
+        return "벱";
+    }
+
 
     public static int solution10(int n){
         return Integer.toString(n).chars().map(i->i-'0').sum();
@@ -125,15 +136,10 @@ class Solution {
     public static int answer14;
 
     public static long solution14_jg(long num){
-        System.out.println(num+" "+count);
         if(count>500) answer14= -1;
         else if (num==1) answer14= count;
-        else if (num%2==0) {
-            System.out.println("짝수네");
-            count++;solution14_jg(num/=2);}
-        else {
-            System.out.println("홀수네");
-            count++; solution14_jg(num=num*3+1);}
+        else if (num%2==0) {count++;solution14_jg(num/=2);}
+        else {count++; solution14_jg(num=num*3+1);}
         return (int)answer14;
     }
     public static int solution14(int num) {
@@ -147,8 +153,19 @@ class Solution {
     public static String solution16(String phone_number){
         return "********************".substring(0,phone_number.length()-4)+phone_number.substring(phone_number.length()-4);
     }
+    public static StringBuffer sum;
+    public static int make_sum_st(int[] nums,int start,int repeat,int sumOfTwo){
+        for(int i=start;i<nums.length;i++,repeat++)
+            sum.append(sumOfTwo+nums[i]);
 
+    }
+    public static int solution18(int[] nums) {
+        int[] set={0,1,2};
 
+        sum[0] = nums[set[0]]+nums[set[1]];
+        make_sum_st(nums,set[2],0,sum[0]);
+        return 0;
+    }
 
     //여러줄 -tab : shift+tap
 
@@ -163,6 +180,7 @@ class Solution {
         System.out.println(solution7(c,d));
         System.out.println(solution8(12));
         System.out.println(solution9("  try  hello world   aVCde    a"));
+        System.out.println(solution9_nam("  try  hello world   aVCde    a"));
         System.out.println(solution10(123));
         //System.out.println(solution11(1234));
         System.out.println(solution12(121));
