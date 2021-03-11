@@ -33,15 +33,20 @@ class Solution {
         return Integer.parseInt(reversed,3);
     }
 
+    //가운데 글자 가져오기 >> 블로그 O
     public static String solution3(String s) {
         if(s.length()%2==0) return s.substring((s.length()/2)-1,s.length()/2+1);
         else return s.substring(s.length()/2,s.length()/2+1);
     }
+
+
     public static long solution4(int a, int b) {
-        if(a*b>=0) return (a+b)*(Math.abs(a-b)+1)/2;
-        else if(a<0) return (a+b)*(Math.abs(b-a)+1)/2;
-        else return (a+b)*(Math.abs(a-b)+1)/2;
+        if(a*b>=0) return (long) (a + b) *(Math.abs(a-b)+1)/2;
+        else if(a<0) return (long) (a + b) *(Math.abs(b-a)+1)/2;
+        else return (long) (a + b) *(Math.abs(a-b)+1)/2;
     }
+
+    //수박수박수박수박수박수? >> 블로그 O
     public static String solution5(int n) {
         /*내 풀이
         String answer = "";
@@ -51,6 +56,8 @@ class Solution {
         //다른사람 풀이
         return new String(new char [n/2+1]).replace("\0", "수박").substring(0,n);
     }
+
+    //문자열을 정수로 바꾸기 >> 블로그 O
     public static int solution6(String s) {
         return Integer.parseInt(s);
     }
@@ -62,6 +69,8 @@ class Solution {
             answer+=a[i]*b[i];
         return answer;
     }
+
+    //약수의 합 >> 블로그 O
     public static int solution8(int n) {
         if(n==0||n==1) return n;
         int answer = n;
@@ -70,6 +79,8 @@ class Solution {
         }
         return answer;
     }
+
+    //이상한 문자 만들기 >>블로그 O
     public static String toUpperAt(String str, int index)
     {
         StringBuilder sb =new StringBuilder(str);
@@ -146,28 +157,29 @@ class Solution {
         return (int)solution14_jg(num);
     }
 
+    //하샤드 수 >> 블로그 O
     public static boolean solution15(int x) {
         return (x % (Integer.toString(x).chars().map(i->i-'0').sum()) == 0);
     }
 
+    //핸드폰 번호 가리기 >> 블로그 O
     public static String solution16(String phone_number){
         return "********************".substring(0,phone_number.length()-4)+phone_number.substring(phone_number.length()-4);
     }
 
-    public static boolean primeCheck(int num){
+    //소수 만들기 >> 블로그 XX
+    public static boolean primeCheck_18(int num){
         for(int i=2;i<=Math.sqrt(num);i++){
             if(num%i==0) return false;
         }
         return true;
     }
-
-
     public static int solution18(int[] nums) {
         int answer=0;
         for(int i=0;i<nums.length-2;i++){
             for(int j=i+1;j<nums.length-1;j++){
                 for(int k=j+1;k<nums.length;k++)
-                    if(primeCheck(nums[i]+nums[j]+nums[k])) answer++;
+                    if(primeCheck_18(nums[i]+nums[j]+nums[k])) answer++;
             }
         }
         return answer;
@@ -211,7 +223,6 @@ class Solution {
         System.out.println(solution18(nums));
 //3
 // 4System.out.println(a + b);
-
 
     }
 
