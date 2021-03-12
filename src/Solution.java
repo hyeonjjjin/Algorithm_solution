@@ -185,6 +185,36 @@ class Solution {
         return answer;
     }
 
+    //크레인 인형뽑기 (level 1) >> 블로그 XX +4
+    public static int solution19(int[][] board, int[] moves){
+        int next=0, cnt=0,current=-1,line=-1;
+        boolean empty_line;
+        int[] Stack= new int[moves.length];
+        for(int i=0;i<moves.length;i++){
+            line=moves[i]-1;
+            empty_line=true;
+            for(int checkDown=0;checkDown<board[0].length;checkDown++){
+                if(board[checkDown][line]==0) {
+                    continue;
+                }
+                else {
+                    next=board[checkDown][line];
+                    board[checkDown][line]=0;
+                    empty_line=false;
+                    break;
+                }
+            }
+            if(!empty_line){
+                if(current !=-1 && next == Stack[current]){
+                    Stack[current--]=0;
+                    cnt+=2;
+                }
+                else Stack[++current]=next;
+            }
+        }
+         return cnt;
+    }
+
     //여러줄 -tab : shift+tap
 
     public static void main(String[] args) {
@@ -221,6 +251,10 @@ class Solution {
         */
         int[] nums={1,2,7,6,4};
         System.out.println(solution18(nums));
+
+        int[][] board={{0,0,0,0,0},{0,0,1,0,3},{0,2,5,0,1},{4,2,4,4,2},{3,5,1,3,1}};
+        int[] moves = {1,5,3,5,1,2,1,4};
+        System.out.println("19 "+solution19(board,moves));
 //3
 // 4System.out.println(a + b);
 
