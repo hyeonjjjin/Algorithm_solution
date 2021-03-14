@@ -185,7 +185,7 @@ class Solution {
         return answer;
     }
 
-    //크레인 인형뽑기 (level 1) >> 블로그 XX +4
+    //크레인 인형뽑기 (level 1) >> 블로그 O +4
     public static int solution19(int[][] board, int[] moves){
         int next=0, cnt=0,current=-1,line=-1;
         boolean empty_line;
@@ -213,6 +213,14 @@ class Solution {
             }
         }
          return cnt;
+    }
+
+    public static int[] solution20(int []arr) {
+
+
+        arr.toString().replaceAll("[0]{2,}","0");
+
+        return arr;
     }
 
     //여러줄 -tab : shift+tap
