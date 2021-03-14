@@ -39,7 +39,6 @@ class Solution {
         else return s.substring(s.length()/2,s.length()/2+1);
     }
 
-
     public static long solution4(int a, int b) {
         if(a*b>=0) return (long) (a + b) *(Math.abs(a-b)+1)/2;
         else if(a<0) return (long) (a + b) *(Math.abs(b-a)+1)/2;
@@ -81,19 +80,16 @@ class Solution {
     }
 
     //이상한 문자 만들기 >>블로그 O
-    public static String toUpperAt(String str, int index)
-    {
+    public static String toUpperAt(String str, int index) {
         StringBuilder sb =new StringBuilder(str);
         sb.setCharAt(index,Character.toUpperCase(str.charAt(index)));
         return sb.toString();
     }
-    public static String toLowerAt(String str, int index)
-    {
+    public static String toLowerAt(String str, int index) {
         StringBuilder sb =new StringBuilder(str);
         sb.setCharAt(index,Character.toLowerCase(str.charAt(index)));
         return sb.toString();
     }
-
     public static String solution9(String s) {
         int k;
         for(int i=0;i<s.length();i++){
@@ -118,7 +114,6 @@ class Solution {
         return "벱";
     }
 
-
     public static int solution10(int n){
         return Integer.toString(n).chars().map(i->i-'0').sum();
         // 123 -> "123" -> '1' '2' '3' -> 1 2 3 -> sum
@@ -127,6 +122,7 @@ class Solution {
         //그리고 다 더하는거
 
     }
+
     public static int[] solution11(long n){
         StringBuffer stb = new StringBuffer();
         String[] s = stb.append(n).reverse().toString().split("");//StringBuffer 변수로 뒤집고 String[]로 변환
@@ -134,18 +130,17 @@ class Solution {
         return answer;
     }
 
-
     public static long solution12(long n){
         if(Math.sqrt(n) == (int)(Math.sqrt(n))) return (long) Math.pow(Math.sqrt(n)+1,2);
         else return -1;
     }
+
     public static double solution13(int[] arr) {
         return Arrays.stream(arr).sum()/(double)arr.length;
     }
 
     public static int count=0;
     public static int answer14;
-
     public static long solution14_jg(long num){
         if(count>500) answer14= -1;
         else if (num==1) answer14= count;
@@ -224,7 +219,6 @@ class Solution {
     }
 
     //여러줄 -tab : shift+tap
-
     public static void main(String[] args) {
         System.out.println(solution2(45));
         System.out.println(solution3("12345"));
@@ -257,14 +251,13 @@ class Solution {
         for(int j=0;j<b;j++)
             System.out.println(answer);
         */
+
         int[] nums={1,2,7,6,4};
         System.out.println(solution18(nums));
 
         int[][] board={{0,0,0,0,0},{0,0,1,0,3},{0,2,5,0,1},{4,2,4,4,2},{3,5,1,3,1}};
         int[] moves = {1,5,3,5,1,2,1,4};
         System.out.println("19 "+solution19(board,moves));
-//3
-// 4System.out.println(a + b);
 
     }
 
