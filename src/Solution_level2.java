@@ -12,7 +12,24 @@ public class Solution_level2 {
         return (long) w*h - (long) ((w / gcd) + (h / gcd) - 1)*gcd;
     }
 
+    //124 나라의 숫자 >> 블로그 XX +8
     public static String solutionL2_2(int n) {
+        StringBuffer answer = new StringBuffer();
+        while(Math.ceil((double) n / 3) > 0){
+            if(n%3==0){
+                answer.append(Integer.toString(4));
+                n=n/3-1;
+            }
+            else{
+                answer.append(Integer.toString(n % 3));
+                n/=3;
+            }
+        }
+        //System.out.println("143");
+        //String ss = answer.toString().replaceAll("^[0]","");
+        return answer.reverse().toString().replaceAll("3","4");
+    }
+    public static String solutionL2_2_reverse(int n) {
         String[] fourToThree=(Integer.toString(n)).replaceAll("4","3").split("");
         int digit=fourToThree.length-1;
         System.out.println(digit);
@@ -20,12 +37,12 @@ public class Solution_level2 {
         for(String s:fourToThree){
             answer += (int)(Math.pow(3,digit--)*Integer.parseInt(s));
         }
-
         return Integer.toString(answer);
     }
 
     public static void main(String[] args) {
         System.out.println(solutionL2_1(8,12));
-        System.out.println(solutionL2_2(14));
+        System.out.println(solutionL2_2(10));
+        //System.out.println(solutionL2_2_reverse(14));
     }
 }
