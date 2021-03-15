@@ -10,17 +10,22 @@ public class Solution_level2 {
         BigInteger bi2 = new BigInteger(Integer.toString(h));
         int gcd=Integer.parseInt("" + bi1.gcd(bi2));
         return (long) w*h - (long) ((w / gcd) + (h / gcd) - 1)*gcd;
-
-//        double ratio = (w>h)? ((double)w)/h : ((double)h)/w;
-  //      int n = (int)Math.ceil(ratio);
-   //     answer = (long) n *(Math.min(w, h));
-//
-        //ratio=4/5;
-  //      System.out.println(ratio+" "+n);
-
-    //    return answer;
     }
+
+    public static String solutionL2_2(int n) {
+        String[] fourToThree=(Integer.toString(n)).replaceAll("4","3").split("");
+        int digit=fourToThree.length-1;
+        System.out.println(digit);
+        int answer =0;
+        for(String s:fourToThree){
+            answer += (int)(Math.pow(3,digit--)*Integer.parseInt(s));
+        }
+
+        return Integer.toString(answer);
+    }
+
     public static void main(String[] args) {
         System.out.println(solutionL2_1(8,12));
+        System.out.println(solutionL2_2(14));
     }
 }
