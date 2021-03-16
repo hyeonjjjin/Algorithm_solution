@@ -43,6 +43,6 @@ public class Solution_level2 {
     public static void main(String[] args) {
         System.out.println(solutionL2_1(8,12));
         System.out.println(solutionL2_2(10));
-        //System.out.println(solutionL2_2_reverse(14));
+        System.out.println(solutionL2_2_reverse(14));
     }
 }
