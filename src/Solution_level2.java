@@ -40,6 +40,14 @@ public class Solution_level2 {
         return Integer.toString(answer);
     }
 
+    //주식 가격 >> 블로그 XX
+    public static int[] solution2_3(int[] prices){
+        int[] answer ={};
+
+
+        return answer;
+    }
+
     public static void main(String[] args) {
         System.out.println(solutionL2_1(8,12));
         System.out.println(solutionL2_2(10));
