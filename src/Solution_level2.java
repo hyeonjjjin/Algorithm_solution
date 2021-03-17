@@ -1,6 +1,7 @@
 import java.lang.Math;
 import java.math.BigInteger;
 import java.sql.SQLOutput;
+import java.util.Arrays;
 
 public class Solution_level2 {
 
@@ -41,9 +42,10 @@ public class Solution_level2 {
     }
 
     //주식 가격 >> 블로그 XX
-    public static int[] solution2_3(int[] prices){
+    public static int[] solutionL2_3(int[] prices){
         int[] answer ={};
-
+        //System.out.println("prices max: "+Integer.parseInt(Arrays.stream(prices).max()));
+//뭐여ㅑ 어케해
 
         return answer;
     }
@@ -52,5 +54,7 @@ public class Solution_level2 {
         System.out.println(solutionL2_1(8,12));
         System.out.println(solutionL2_2(10));
         System.out.println(solutionL2_2_reverse(14));
+        int[] prices = {1,2,3,2,3};
+        System.out.println(solutionL2_3(prices));
     }
 }
