@@ -45,7 +45,8 @@ public class Solution_level2 {
     public static int[] solutionL2_3(int[] prices){
         int[] answer ={};
         //System.out.println("prices max: "+Integer.parseInt(Arrays.stream(prices).max()));
-//뭐여ㅑ 어케해
+
+
 
         return answer;
     }
