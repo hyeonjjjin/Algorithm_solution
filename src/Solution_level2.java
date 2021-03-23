@@ -51,6 +51,18 @@ public class Solution_level2 {
         return answer;
     }
 
+    //올바른 괄호 >> 블로그 XX +7
+    public static boolean solutionL2_4(String s) {
+        int check=0;
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)=='(') check++;
+            else check--;
+            if(check<0) return false;
+        }
+        if(check==0) return true;
+        else return false;
+    }
+
     public static void main(String[] args) {
         System.out.println(solutionL2_1(8,12));
         System.out.println(solutionL2_2(10));
