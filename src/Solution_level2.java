@@ -64,15 +64,17 @@ public class Solution_level2 {
         else return false;
     }
 
-    //최솟값 만들기 >> 블로그 XX
+    //최솟값 만들기 >> 블로그 XX +4
     public static int solutionL2_5(int []A, int []B)
     {
         int answer = 0;
         Arrays.sort(A);
-        Integer[] B_Integer = Arrays.stream(B).boxed().toArray(Integer[]::new);
-        Arrays.sort(B_Integer,Collections.reverseOrder());
-        for(int i=0;i<A.length;i++)
-           answer += A[i]*B_Integer[i];
+        Arrays.sort(B);
+        //Integer[] B_Integer = Arrays.stream(B).boxed().toArray(Integer[]::new);
+        //Arrays.sort(B_Integer,Collections.reverseOrder());
+        int len = A.length;
+        for(int i=0;i<len;i++)
+           answer += A[i]*B[len-i-1];
         return answer;
         //sum은 더 오래 걸림
     }
