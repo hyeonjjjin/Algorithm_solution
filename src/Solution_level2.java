@@ -2,6 +2,8 @@ import java.lang.Math;
 import java.math.BigInteger;
 import java.sql.SQLOutput;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Stack;
 
 public class Solution_level2 {
 
@@ -63,11 +65,28 @@ public class Solution_level2 {
         else return false;
     }
 
+    //최솟값 만들기 >> 블로그 XX
+    public static int solutionL2_5(int []A, Integer []B)
+    {
+        Stack<Integer> stack = new Stack<>(); //int형 스택 선언
+
+        int answer = 0;
+        Arrays.sort(A);
+        //Integer[] B_Integer = Arrays.stream(B).boxed().toArray(Integer[]::new);
+        Arrays.sort(B,Collections.reverseOrder());
+        for(int i=0;i<A.length;i++)
+           answer += A[i]*B[i];
+        return answer;
+    }
+
     public static void main(String[] args) {
         System.out.println(solutionL2_1(8,12));
         System.out.println(solutionL2_2(10));
         System.out.println(solutionL2_2_reverse(14));
         int[] prices = {1,2,3,2,3};
         System.out.println(solutionL2_3(prices));
+        int[] A = {1,2};
+        Integer[] B = {3,4};
+        System.out.println(solutionL2_5(A,B));
     }
 }
