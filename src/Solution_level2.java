@@ -77,6 +77,7 @@ public class Solution_level2 {
         for(int i=0;i<A.length;i++)
            answer += A[i]*B[i];
         return answer;
+        //sum은 더걸림
     }
 
     public static void main(String[] args) {
