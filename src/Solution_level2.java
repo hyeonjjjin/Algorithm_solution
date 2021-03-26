@@ -79,6 +79,23 @@ public class Solution_level2 {
         //sum은 더 오래 걸림
     }
 
+    //카펫 >> 블로그 XX +4
+    public static boolean CheckBrown(int x, int y, int brown){
+        return ((2*(x+y)+4) == brown);
+    }
+
+    public static int[] solutionL2_6(int brown, int yellow) {
+        int[] answer = new int[2];
+        for(int x=1;x<=(int)Math.sqrt(yellow);x++) {
+            if (((yellow / x) == (double) yellow / x) && CheckBrown(x, yellow / x, brown)) {
+                answer[0] = yellow / x+2; answer[1] = x+2;
+                break;
+            }
+        }
+        System.out.println(answer[0]+" "+answer[1]);
+       return answer;
+    }
+
 
     public static void main(String[] args) {
         System.out.println(solutionL2_1(8,12));
@@ -89,5 +106,7 @@ public class Solution_level2 {
         int[] A = {1,2};
         int[] B = {3,4};
         System.out.println(solutionL2_5(A,B));
+        System.out.println(solutionL2_6(24,24));
+
     }
 }
