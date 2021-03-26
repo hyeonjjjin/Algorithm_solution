@@ -1,8 +1,8 @@
 import java.lang.Math;
 import java.math.BigInteger;
-import java.sql.SQLOutput;
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.LinkedList; //import
+import java.util.Queue; //import
 
 public class Solution_level2 {
 
@@ -65,8 +65,7 @@ public class Solution_level2 {
     }
 
     //최솟값 만들기 >> 블로그 XX +4
-    public static int solutionL2_5(int []A, int []B)
-    {
+    public static int solutionL2_5(int []A, int []B) {
         int answer = 0;
         Arrays.sort(A);
         Arrays.sort(B);
@@ -83,7 +82,6 @@ public class Solution_level2 {
     public static boolean CheckBrown(int x, int y, int brown){
         return ((2*(x+y)+4) == brown);
     }
-
     public static int[] solutionL2_6(int brown, int yellow) {
         int[] answer = new int[2];
         for(int x=1;x<=(int)Math.sqrt(yellow);x++) {
@@ -92,8 +90,40 @@ public class Solution_level2 {
                 break;
             }
         }
-        System.out.println(answer[0]+" "+answer[1]);
        return answer;
+    }
+
+
+    public int solutionL2_7(int[] priorities, int location) {
+        Queue<Integer> queue = new LinkedList<>(); //int형 queue 선언, linkedlist 이용
+
+        int temp=0, max=0, rest=priorities.length, times=0, location_now=location;
+        int[] temp_priorities = priorities;
+        Arrays.sort(temp_priorities);
+        max=temp_priorities[rest-1];
+        //주어진 자료 큐에 저장
+        for (int i=0;i<priorities.length;i++) queue.add(priorities[i]);
+        temp = queue.poll();
+
+        //location_now -=1;
+        //꺼내보니 우선순위 1등이다? 그러면 얘가 목표했던 앤지 확인해야지
+        if(temp==max) {
+            if(location_now == 0)
+                return times;
+            else{
+                location_now -=1;
+                times+=1;
+                rest-=1;
+            }
+        }
+        //꺼냈는데 우선순위 1등이 아니면 다시 뒤에 넣어야지
+        else {
+            queue.add(temp);
+
+        }
+
+        int answer = 0;
+        return answer;
     }
 
 
