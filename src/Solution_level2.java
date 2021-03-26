@@ -99,7 +99,9 @@ public class Solution_level2 {
         Queue<Integer> queue = new LinkedList<>(); //int형 queue 선언, linkedlist 이용
 
         int temp=0, max=0, rest=priorities.length, times=0, location_now=location;
-        int[] temp_priorities = priorities;
+        // 그대로 넣는건 얕은복사(Shallow Copy) 한 쪽 값이 바뀔 때 같이 바뀜.
+        //clone 함수를 이용하는건 깊은복사(Deep Copy) 두 값이 서로 영향 X
+        int[] temp_priorities = priorities.clone();
         Arrays.sort(temp_priorities);
         max=temp_priorities[rest-1];
         //주어진 자료 큐에 저장
