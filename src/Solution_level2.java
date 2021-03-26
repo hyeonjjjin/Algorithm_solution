@@ -1,5 +1,6 @@
 import java.lang.Math;
 import java.math.BigInteger;
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.LinkedList; //import
 import java.util.Queue; //import
@@ -94,7 +95,7 @@ public class Solution_level2 {
     }
 
 
-    public int solutionL2_7(int[] priorities, int location) {
+    public static int solutionL2_7(int[] priorities, int location) {
         Queue<Integer> queue = new LinkedList<>(); //int형 queue 선언, linkedlist 이용
 
         int temp=0, max=0, rest=priorities.length, times=0, location_now=location;
@@ -103,27 +104,34 @@ public class Solution_level2 {
         max=temp_priorities[rest-1];
         //주어진 자료 큐에 저장
         for (int i=0;i<priorities.length;i++) queue.add(priorities[i]);
-        temp = queue.poll();
+
 
         //location_now -=1;
-        //꺼내보니 우선순위 1등이다? 그러면 얘가 목표했던 앤지 확인해야지
-        if(temp==max) {
-            if(location_now == 0)
-                return times;
-            else{
-                location_now -=1;
-                times+=1;
-                rest-=1;
+
+        while(rest>0) {
+            temp = queue.poll();
+            //꺼내보니 우선순위 1등이다? 그러면 얘가 목표했던 앤지 확인해야지
+            if (temp == max) {
+                if (location_now == 0)
+                    return times;
+                else {
+                    location_now -= 1;
+                    times += 1;
+                    rest -= 1;
+                }
+                if(rest-1-times>=0)
+                    max = temp_priorities[rest-1-times];
+            }
+            //꺼냈는데 우선순위 1등이 아니면 다시 뒤에 넣어야지 근데 내가 목표했던 애면 location_now 재설정
+            else {
+                if (location_now == 0)
+                    location_now = rest - 1;
+                else location_now -= 1;
+                queue.add(temp);
             }
         }
-        //꺼냈는데 우선순위 1등이 아니면 다시 뒤에 넣어야지
-        else {
-            queue.add(temp);
-
-        }
-
-        int answer = 0;
-        return answer;
+        //int answer = 0;
+        return 0;
     }
 
 
@@ -137,6 +145,7 @@ public class Solution_level2 {
         int[] B = {3,4};
         System.out.println(solutionL2_5(A,B));
         System.out.println(solutionL2_6(24,24));
-
+        int[] priorities = {2,1,3,2};
+        System.out.println("7: " +solutionL2_7(priorities,2));
     }
 }
