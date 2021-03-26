@@ -94,45 +94,39 @@ public class Solution_level2 {
        return answer;
     }
 
-
+    // 프린터 >> 블로그 XX +6
     public static int solutionL2_7(int[] priorities, int location) {
         Queue<Integer> queue = new LinkedList<>(); //int형 queue 선언, linkedlist 이용
-
         int temp=0, max=0, rest=priorities.length, times=0, location_now=location;
+
         // 그대로 넣는건 얕은복사(Shallow Copy) 한 쪽 값이 바뀔 때 같이 바뀜.
         //clone 함수를 이용하는건 깊은복사(Deep Copy) 두 값이 서로 영향 X
         int[] temp_priorities = priorities.clone();
+        //최댓값 찾기 위함
         Arrays.sort(temp_priorities);
         max=temp_priorities[rest-1];
+
         //주어진 자료 큐에 저장
         for (int i=0;i<priorities.length;i++) queue.add(priorities[i]);
-
-
-        //location_now -=1;
 
         while(rest>0) {
             temp = queue.poll();
             //꺼내보니 우선순위 1등이다? 그러면 얘가 목표했던 앤지 확인해야지
             if (temp == max) {
-                if (location_now == 0)
-                    return times;
-                else {
-                    location_now -= 1;
-                    times += 1;
-                    rest -= 1;
-                }
-                if(rest-1-times>=0)
-                    max = temp_priorities[rest-1-times];
+                times++;
+                if (location_now == 0) return times;
+
+                location_now--;
+                rest--;
+                if(rest-1>=0) max = temp_priorities[rest-1];
             }
             //꺼냈는데 우선순위 1등이 아니면 다시 뒤에 넣어야지 근데 내가 목표했던 애면 location_now 재설정
             else {
-                if (location_now == 0)
-                    location_now = rest - 1;
-                else location_now -= 1;
+                if (location_now == 0) location_now = rest - 1;
+                else location_now--;
                 queue.add(temp);
             }
         }
-        //int answer = 0;
         return 0;
     }
 
@@ -147,7 +141,7 @@ public class Solution_level2 {
         int[] B = {3,4};
         System.out.println(solutionL2_5(A,B));
         System.out.println(solutionL2_6(24,24));
-        int[] priorities = {2,1,3,2};
-        System.out.println("7: " +solutionL2_7(priorities,2));
+        int[] priorities = {9,7,1,2,1,5};
+        System.out.println("7: " +solutionL2_7(priorities,5));
     }
 }
