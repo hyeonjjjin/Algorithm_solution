@@ -47,9 +47,6 @@ public class Solution_level2 {
     public static int[] solutionL2_3(int[] prices){
         int[] answer ={};
         //System.out.println("prices max: "+Integer.parseInt(Arrays.stream(prices).max()));
-
-
-
         return answer;
     }
 
@@ -128,6 +125,14 @@ public class Solution_level2 {
             }
         }
         return 0;
+    }
+
+    //피보나치 수 >> 블로그 XX
+    public static int solutionL2_8(int n){
+        int answer=0;
+
+
+        return answer;
     }
 
 
