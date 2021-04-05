@@ -129,7 +129,7 @@ public class Solution_level2 {
 
     //피보나치 수 >> 블로그 XX +10
     public static int fibonacci(int fn_1, int fn_2, int n){
-        if(fn_1+fn_2>=2147483647) {fn_1 %=1234567;fn_2 %=1234567;}
+        if(fn_1+fn_2>=9999999) {fn_1 %=1234567;fn_2 %=1234567;}
         if(n<=2) return fn_1+fn_2;
         else return fibonacci(fn_2, fn_1+fn_2,  n-1);
     }
@@ -137,6 +137,17 @@ public class Solution_level2 {
         return fibonacci(0,1,n);
     }
 
+    //최댓값과 최솟값 >> 블로그 XX +2
+    public static String solutionL2_9(String s){
+        String[] ss =s.split(" ");
+        int temp, max=Integer.parseInt(ss[0]), min=Integer.parseInt(ss[0]);
+        for(String n :ss){
+            temp = Integer.parseInt(n);
+            max = Math.max(temp, max);
+            min = Math.min(min, temp);
+        }
+        return min +" "+ max;
+    }
 
     public static void main(String[] args) {
         System.out.println(solutionL2_1(8,12));
@@ -151,5 +162,7 @@ public class Solution_level2 {
         int[] priorities = {9,7,1,2,1,5};
         System.out.println("7: " +solutionL2_7(priorities,5));
         System.out.println(solutionL2_8(88));
+        String s = "-1 -2 -3 -4";
+        System.out.println(solutionL2_9(s));
     }
 }
