@@ -133,7 +133,7 @@ public class Solution_level2 {
         else return fibonacci(fn_2, fn_1+fn_2,  n-1);
     }
     public static int solutionL2_8(int n){
-        return fibonacci(0,1,n);
+        return fibonacci(0,1,n)%1234567;
     }
 
 
