@@ -149,6 +149,11 @@ public class Solution_level2 {
         return min +" "+ max;
     }
 
+    // 숫자의 표현 >> 블로그 XX
+    public static int solutionL2_10(int n){
+
+        return 0;
+    }
     public static void main(String[] args) {
         System.out.println(solutionL2_1(8,12));
         System.out.println(solutionL2_2(10));
