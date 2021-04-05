@@ -128,11 +128,12 @@ public class Solution_level2 {
     }
 
     //피보나치 수 >> 블로그 XX
+    public static int fibonacci(int fn_1, int fn_2, int n){
+        if(n<=2) return fn_1+fn_2;
+        else return fibonacci(fn_2, fn_1+fn_2,  n-1);
+    }
     public static int solutionL2_8(int n){
-        int answer=0;
-
-
-        return answer;
+        return fibonacci(0,1,n);
     }
 
 
