@@ -154,8 +154,7 @@ public class Solution_level2 {
         int answer=1;
         if(n%2 ==1) answer++;
         for(int x=2;x<(n);x++) {
-            if((n%x==0)&&()) {
-
+            if((x%2==1)&&(n%x==0)&&((n/x)-(x/2)>0)) {
                 answer++;
         }}
         return answer;
@@ -175,6 +174,6 @@ public class Solution_level2 {
         System.out.println(solutionL2_8(88));
         String s = "-1 -2 -3 -4";
         System.out.println(solutionL2_9(s));
-        System.out.println(solutionL2_10(15));
+        System.out.println(solutionL2_10(18));
     }
 }
