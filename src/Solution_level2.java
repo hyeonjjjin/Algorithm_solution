@@ -7,7 +7,7 @@ import java.util.Queue; //import
 
 public class Solution_level2 {
 
-    //멀쩡한 사각형 >> 블로그 XX +12
+    //멀쩡한 사각형 >> 블로그 O +12
     public static long solutionL2_1(int w, int h) {
         BigInteger bi1 = new BigInteger(Integer.toString(w));
         BigInteger bi2 = new BigInteger(Integer.toString(h));
@@ -151,8 +151,14 @@ public class Solution_level2 {
 
     // 숫자의 표현 >> 블로그 XX
     public static int solutionL2_10(int n){
+        int answer=1;
+        if(n%2 ==1) answer++;
+        for(int x=2;x<(n);x++) {
+            if((n%x==0)&&()) {
 
-        return 0;
+                answer++;
+        }}
+        return answer;
     }
     public static void main(String[] args) {
         System.out.println(solutionL2_1(8,12));
@@ -169,5 +175,6 @@ public class Solution_level2 {
         System.out.println(solutionL2_8(88));
         String s = "-1 -2 -3 -4";
         System.out.println(solutionL2_9(s));
+        System.out.println(solutionL2_10(15));
     }
 }
