@@ -170,7 +170,28 @@ public class Solution_level2 {
         return answer;
     }
 
-    public static void main(String[] args) {
+    // 괄호 변환 >> 블로그 XX
+    public static int CheckCorrect(String p){
+        String[] pArray = p.split("");
+        int checkUW=0, balanced=0, correct=1;
+        for (String parentheses : pArray) {
+            if(parentheses == "(") checkUW++;
+            else checkUW--;
+            if(checkUW<0) {correct=-1; break;}
+        }
+        if(correct==1) return 1;
+        else  return 0;
+    }
+    public static String solutionL2_11(String p) {
+        switch (CheckCorrect(p)){
+            case 1: return p; //균형잡히고 올바른 괄호 문자열
+            case 0: //균형잡히고 올바르지 않은 문자열
+      }
+
+        return "";
+    }
+
+        public static void main(String[] args) {
         System.out.println(solutionL2_1(8, 12));
         System.out.println(solutionL2_2(10));
         System.out.println(solutionL2_2_reverse(14));
