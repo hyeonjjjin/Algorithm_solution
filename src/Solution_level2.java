@@ -155,8 +155,7 @@ public class Solution_level2 {
         return min + " " + max;
     }
 
-    // 숫자의 표현 >> 블로그 XX
-
+    // 숫자의 표현 >> 블로그 XX +7
     public static int ContinuousNum(int sum, int end, int n){
         if((sum+end)<n) return ContinuousNum(sum+end, end+1, n);
         else if((sum+end) == n) return 1;
@@ -167,13 +166,7 @@ public class Solution_level2 {
         //시작 지점은 n/2까지 왜냐면 그이상은 더하면 n보다 크니까
         for(int start=1;start<=n/2;start++){
             answer += ContinuousNum(start, start+1, n);
-        }/*
-        if (n % 2 == 1 && n != 1) answer++;
-        for (int x = 2; x <= (n) / 2; x++) {
-            if ((x % 2 == 1) && (n % x == 0) && (((n / x) - (x / 2) > 0) && ((n / x) + (x / 2) <= n))) {
-                answer++;
-            }
-        }*/
+        }
         return answer;
     }
 
