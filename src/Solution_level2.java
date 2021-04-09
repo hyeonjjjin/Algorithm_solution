@@ -204,19 +204,19 @@ public class Solution_level2 {
             case 1:
                 return p; //균형잡히고 올바른 괄호 문자열
             case 0: //균형잡히고 올바르지 않은 문자열
+
         }
 
         return "";
     }
 
-    public static String SkillCheck1(int n) {
+    public static String SkillCheck1_1(int n) {
         String watermelon = "";
         for (int i = 0; i <= n / 2; i++)
             watermelon += "수박";
         return watermelon.substring(0, n);
     }
-
-    public static String SkillCheck2(String[] participant, String[] completion) {
+    public static String SkillCheck1_2(String[] participant, String[] completion) {
         String answer = "";
         int[] checkList = new int[completion.length];
         int index = -1, flag = 0;
@@ -243,7 +243,6 @@ public class Solution_level2 {
 
         return "에엥";
     }
-
     public static int[][] SkillCheck2_1(int[][] arr1, int[][] arr2) {
         int[][] answer = new int[arr1.length][arr1[0].length];
         for (int i = 0; i < arr1.length; i++) {
@@ -252,7 +251,6 @@ public class Solution_level2 {
         }
         return answer;
     }
-
     public static int[] SkillCheck2_2(int N, int[] stages) {
         stages = Arrays.stream(stages).sorted().toArray();
         int max = stages[stages.length-1];
@@ -287,10 +285,10 @@ public class Solution_level2 {
         String s = "-1 -2 -3 -4";
         System.out.println(solutionL2_9(s));
         System.out.println(solutionL2_10(15));
-        System.out.println(SkillCheck1(4));
+        System.out.println(SkillCheck1_1(4));
         String[] par = {"mislav", "stanko", "mislav", "ana"};
         String[] com = {"stanko", "ana", "mislav"};
-        System.out.println(SkillCheck2(par, com));
+        System.out.println(SkillCheck1_2(par, com));
         int[] stages = {2, 1, 2, 6, 2, 4, 3, 3};
         SkillCheck2_2(5, stages);
     }
