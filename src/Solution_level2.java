@@ -3,6 +3,7 @@ import java.math.BigInteger;
 import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.LinkedList; //import
+import java.util.Locale;
 import java.util.Queue; //import
 
 public class Solution_level2 {
@@ -156,50 +157,121 @@ public class Solution_level2 {
     }
 
     // 숫자의 표현 >> 블로그 XX +7
-    public static int ContinuousNum(int sum, int end, int n){
-        if((sum+end)<n) return ContinuousNum(sum+end, end+1, n);
-        else if((sum+end) == n) return 1;
+    public static int ContinuousNum(int sum, int end, int n) {
+        if ((sum + end) < n) return ContinuousNum(sum + end, end + 1, n);
+        else if ((sum + end) == n) return 1;
         else return 0;
     }
+
     public static int solutionL2_10(int n) {
         int answer = 1;
         //시작 지점은 n/2까지 왜냐면 그이상은 더하면 n보다 크니까
-        for(int start=1;start<=n/2;start++){
-            answer += ContinuousNum(start, start+1, n);
+        for (int start = 1; start <= n / 2; start++) {
+            answer += ContinuousNum(start, start + 1, n);
         }
         return answer;
     }
 
     // 괄호 변환 >> 블로그 XX
-    public static String u="";
-    public static String v="";
-    public static int CheckCorrect(String p){
+    public static String u = "";
+    public static String v = "";
+
+    public static int CheckCorrect(String p) {
         String[] pArray = p.split("");
-        int checkUW=0, balanced=0, correct=1;
-        String temp="";
+        int checkUW = 0, balanced = 0, correct = 1;
+        String temp = "";
 
         for (String parentheses : pArray) {
-            temp+=parentheses;
-            if(parentheses == "(") checkUW++;
+            temp += parentheses;
+            if (parentheses == "(") checkUW++;
             else checkUW--;
-            if(checkUW<0) {correct=-1; break;}
-            else if(checkUW==0) {u=temp; temp="";}
+            if (checkUW < 0) {
+                correct = -1;
+                break;
+            } else if (checkUW == 0) {
+                u = temp;
+                temp = "";
+            }
         }
-        v=temp;
+        v = temp;
 
-        if(correct==1) return 1;
-        else  return 0;
+        if (correct == 1) return 1;
+        else return 0;
     }
+
     public static String solutionL2_11(String p) {
-        switch (CheckCorrect(p)){
-            case 1: return p; //균형잡히고 올바른 괄호 문자열
+        switch (CheckCorrect(p)) {
+            case 1:
+                return p; //균형잡히고 올바른 괄호 문자열
             case 0: //균형잡히고 올바르지 않은 문자열
-      }
+        }
 
         return "";
     }
 
-        public static void main(String[] args) {
+    public static String SkillCheck1(int n) {
+        String watermelon = "";
+        for (int i = 0; i <= n / 2; i++)
+            watermelon += "수박";
+        return watermelon.substring(0, n);
+    }
+
+    public static String SkillCheck2(String[] participant, String[] completion) {
+        String answer = "";
+        int[] checkList = new int[completion.length];
+        int index = -1, flag = 0;
+        for (String check : participant) {
+            try {
+                index = Arrays.binarySearch(completion, check);
+                if (checkList[index] != 1) checkList[index] = 1;
+                else {
+                    for (int i = index + 1; i < completion.length; i++) {
+                        if (completion[i] == check) {
+                            checkList[i] = 1;
+                            flag = 1;
+                            break;
+                        }
+                    }
+                    if (flag == 0) return check;
+                }
+            } catch (ArrayIndexOutOfBoundsException e) {
+
+                return check;
+            }
+
+        }
+
+        return "에엥";
+    }
+
+    public static int[][] SkillCheck2_1(int[][] arr1, int[][] arr2) {
+        int[][] answer = new int[arr1.length][arr1[0].length];
+        for (int i = 0; i < arr1.length; i++) {
+            for (int j = 0; j < arr1[0].length; j++)
+                answer[i][j] = arr1[i][j] + arr2[i][j];
+        }
+        return answer;
+    }
+
+    public static int[] SkillCheck2_2(int N, int[] stages) {
+        stages = Arrays.stream(stages).sorted().toArray();
+        int max = stages[stages.length-1];
+        int[] checkStage = new int[max+1];
+        float[] checkFail = new float[max+1];
+        //System.out.println(stages[stages.length-1]);
+        for(int i:stages) checkStage[i] =0;
+        for(int i:stages) checkStage[i] +=1;
+        int stageP=0;
+        for(int i=1;i<stages.length-1;i++) {
+            checkFail[i] =checkStage[i]/(stages.length-stageP);
+            stageP+=checkStage[i];
+        }
+
+        int[] d = {1, 2, 3};
+        return d;
+    }
+
+    public static void main(String[] args) {
         System.out.println(solutionL2_1(8, 12));
         System.out.println(solutionL2_2(10));
         System.out.println(solutionL2_2_reverse(14));
@@ -215,5 +287,11 @@ public class Solution_level2 {
         String s = "-1 -2 -3 -4";
         System.out.println(solutionL2_9(s));
         System.out.println(solutionL2_10(15));
+        System.out.println(SkillCheck1(4));
+        String[] par = {"mislav", "stanko", "mislav", "ana"};
+        String[] com = {"stanko", "ana", "mislav"};
+        System.out.println(SkillCheck2(par, com));
+        int[] stages = {2, 1, 2, 6, 2, 4, 3, 3};
+        SkillCheck2_2(5, stages);
     }
 }
