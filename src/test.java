@@ -1,10 +1,10 @@
 import java.util.Arrays;
-
-public class test {
-    // 괄호 변환 >> 블로그 XX
+class test_extend{
     public static String u = "";
     public static String v = "";
-
+}
+public class test extends test_extend{
+    //어케해..
     public static int CheckCorrect(String p) {
         String[] pArray = p.split("");
         int checkUW = 0, correct = 1;

@@ -171,7 +171,7 @@ public class Solution_level2 extends test{
         }
         return answer;
     }
-
+    // 괄호 변환 >> 블로그 XX
     public static String solutionL2_11(String p) {
         switch (CheckCorrect(p)) {
             case 1:
@@ -258,6 +258,11 @@ public class Solution_level2 extends test{
         String s = "-1 -2 -3 -4";
         System.out.println(solutionL2_9(s));
         System.out.println(solutionL2_10(15));
+        System.out.println(solutionL2_11("()()()))(("));
+
+
+
+
         System.out.println(SkillCheck1_1(4));
         String[] par = {"mislav", "stanko", "mislav", "ana"};
         String[] com = {"stanko", "ana", "mislav"};
