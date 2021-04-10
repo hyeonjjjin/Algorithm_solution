@@ -16,7 +16,7 @@ public class Solution_level2 {
         return (long) w * h - (long) ((w / gcd) + (h / gcd) - 1) * gcd;
     }
 
-    //124 나라의 숫자 >> 블로그 XX +8
+    //124 나라의 숫자 >> 블로그 O +8
     public static String solutionL2_2(int n) {
         StringBuffer answer = new StringBuffer();
         while (Math.ceil((double) n / 3) > 0) {
