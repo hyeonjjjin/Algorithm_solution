@@ -162,7 +162,7 @@ public class Solution_level2 extends test{
         else if ((sum + end) == n) return 1;
         else return 0;
     }
-
+//뭐야!! ren 이름 이름 하면 바뀌냐
     public static int solutionL2_10(int n) {
         int answer = 1;
         //시작 지점은 n/2까지 왜냐면 그이상은 더하면 n보다 크니까
@@ -170,18 +170,19 @@ public class Solution_level2 extends test{
             answer += ContinuousNum(start, start + 1, n);
         }
         return answer;
-    }
+    }/*
     // 괄호 변환 >> 블로그 XX
     public static String solutionL2_11(String p) {
         switch (CheckCorrect(p)) {
             case 1:
                 return p; //균형잡히고 올바른 괄호 문자열
             case 0: //균형잡히고 올바르지 않은 문자열
+//어디욘?
 
         }
 
         return "";
-    }
+    }*/
 
     public static String SkillCheck1_1(int n) {
         String watermelon = "";
