@@ -6,7 +6,7 @@ import java.util.LinkedList; //import
 import java.util.Locale;
 import java.util.Queue; //import
 
-public class Solution_level2 {
+public class Solution_level2 extends test{
 
     //멀쩡한 사각형 >> 블로그 O +12
     public static long solutionL2_1(int w, int h) {
@@ -170,33 +170,6 @@ public class Solution_level2 {
             answer += ContinuousNum(start, start + 1, n);
         }
         return answer;
-    }
-
-    // 괄호 변환 >> 블로그 XX
-    public static String u = "";
-    public static String v = "";
-
-    public static int CheckCorrect(String p) {
-        String[] pArray = p.split("");
-        int checkUW = 0, balanced = 0, correct = 1;
-        String temp = "";
-
-        for (String parentheses : pArray) {
-            temp += parentheses;
-            if (parentheses == "(") checkUW++;
-            else checkUW--;
-            if (checkUW < 0) {
-                correct = -1;
-                break;
-            } else if (checkUW == 0) {
-                u = temp;
-                temp = "";
-            }
-        }
-        v = temp;
-
-        if (correct == 1) return 1;
-        else return 0;
     }
 
     public static String solutionL2_11(String p) {
