@@ -1,12 +1,10 @@
 import java.lang.Math;
 import java.math.BigInteger;
-import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.LinkedList; //import
-import java.util.Locale;
 import java.util.Queue; //import
 
-public class Solution_level2 extends test{
+public class Solution_level2{
 
     //멀쩡한 사각형 >> 블로그 O +12
     public static long solutionL2_1(int w, int h) {
@@ -244,31 +242,29 @@ public class Solution_level2 extends test{
     }
 
     public static void main(String[] args) {
-        System.out.println(solutionL2_1(8, 12));
-        System.out.println(solutionL2_2(10));
-        System.out.println(solutionL2_2_reverse(14));
-        int[] prices = {1, 2, 3, 2, 3};
-        System.out.println(solutionL2_3(prices));
-        int[] A = {1, 2};
-        int[] B = {3, 4};
-        System.out.println(solutionL2_5(A, B));
-        System.out.println(solutionL2_6(24, 24));
-        int[] priorities = {9, 7, 1, 2, 1, 5};
-        System.out.println("7: " + solutionL2_7(priorities, 5));
-        System.out.println(solutionL2_8(88));
-        String s = "-1 -2 -3 -4";
-        System.out.println(solutionL2_9(s));
-        System.out.println(solutionL2_10(15));
-        System.out.println(solutionL2_11("()()()))(("));
+//        System.out.println(solutionL2_1(8, 12));
+//        System.out.println(solutionL2_2(10));
+//        System.out.println(solutionL2_2_reverse(14));
+//        int[] prices = {1, 2, 3, 2, 3};
+//        System.out.println(solutionL2_3(prices));
+//        int[] A = {1, 2};
+//        int[] B = {3, 4};
+//        System.out.println(solutionL2_5(A, B));
+//        System.out.println(solutionL2_6(24, 24));
+//        int[] priorities = {9, 7, 1, 2, 1, 5};
+//        System.out.println("7: " + solutionL2_7(priorities, 5));
+//        System.out.println(solutionL2_8(88));
+//        String s = "-1 -2 -3 -4";
+//        System.out.println(solutionL2_9(s));
+//        System.out.println(solutionL2_10(15));맞아근데 왜빨갴ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+        System.out.println(new SolutionL2_11("()()()))((").solve());
 
 
-
-
-        System.out.println(SkillCheck1_1(4));
-        String[] par = {"mislav", "stanko", "mislav", "ana"};
-        String[] com = {"stanko", "ana", "mislav"};
-        System.out.println(SkillCheck1_2(par, com));
-        int[] stages = {2, 1, 2, 6, 2, 4, 3, 3};
-        SkillCheck2_2(5, stages);
+//        System.out.println(SkillCheck1_1(4));
+//        String[] par = {"mislav", "stanko", "mislav", "ana"};
+//        String[] com = {"stanko", "ana", "mislav"};
+//        System.out.println(SkillCheck1_2(par, com));
+//        int[] stages = {2, 1, 2, 6, 2, 4, 3, 3};
+//        SkillCheck2_2(5, stages);
     }
 }
