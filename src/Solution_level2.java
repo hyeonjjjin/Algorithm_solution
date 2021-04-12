@@ -26,15 +26,12 @@ public class Solution_level2{
                 n /= 3;
             }
         }
-        //System.out.println("143");
-        //String ss = answer.toString().replaceAll("^[0]","");
         return answer.reverse().toString().replaceAll("3", "4");
     }
 
     public static String solutionL2_2_reverse(int n) {
         String[] fourToThree = (Integer.toString(n)).replaceAll("4", "3").split("");
         int digit = fourToThree.length - 1;
-        System.out.println(digit);
         int answer = 0;
         for (String s : fourToThree) {
             answer += (int) (Math.pow(3, digit--) * Integer.parseInt(s));
@@ -45,7 +42,6 @@ public class Solution_level2{
     //주식 가격 >> 블로그 XX
     public static int[] solutionL2_3(int[] prices) {
         int[] answer = {};
-        //System.out.println("prices max: "+Integer.parseInt(Arrays.stream(prices).max()));
         return answer;
     }
 
@@ -66,20 +62,16 @@ public class Solution_level2{
         int answer = 0;
         Arrays.sort(A);
         Arrays.sort(B);
-        //Integer[] B_Integer = Arrays.stream(B).boxed().toArray(Integer[]::new);
-        //Arrays.sort(B_Integer,Collections.reverseOrder());
         int len = A.length;
         for (int i = 0; i < len; i++)
             answer += A[i] * B[len - i - 1];
         return answer;
-        //sum은 더 오래 걸림
     }
 
     //카펫 >> 블로그 XX +4
     public static boolean CheckBrown(int x, int y, int brown) {
         return ((2 * (x + y) + 4) == brown);
     }
-
     public static int[] solutionL2_6(int brown, int yellow) {
         int[] answer = new int[2];
         for (int x = 1; x <= (int) Math.sqrt(yellow); x++) {
@@ -160,7 +152,8 @@ public class Solution_level2{
         else if ((sum + end) == n) return 1;
         else return 0;
     }
-//뭐야!! ren 이름 이름 하면 바뀌냐
+
+
     public static int solutionL2_10(int n) {
         int answer = 1;
         //시작 지점은 n/2까지 왜냐면 그이상은 더하면 n보다 크니까
@@ -181,65 +174,6 @@ public class Solution_level2{
 
         return "";
     }*/
-
-    public static String SkillCheck1_1(int n) {
-        String watermelon = "";
-        for (int i = 0; i <= n / 2; i++)
-            watermelon += "수박";
-        return watermelon.substring(0, n);
-    }
-    public static String SkillCheck1_2(String[] participant, String[] completion) {
-        String answer = "";
-        int[] checkList = new int[completion.length];
-        int index = -1, flag = 0;
-        for (String check : participant) {
-            try {
-                index = Arrays.binarySearch(completion, check);
-                if (checkList[index] != 1) checkList[index] = 1;
-                else {
-                    for (int i = index + 1; i < completion.length; i++) {
-                        if (completion[i] == check) {
-                            checkList[i] = 1;
-                            flag = 1;
-                            break;
-                        }
-                    }
-                    if (flag == 0) return check;
-                }
-            } catch (ArrayIndexOutOfBoundsException e) {
-
-                return check;
-            }
-
-        }
-
-        return "에엥";
-    }
-    public static int[][] SkillCheck2_1(int[][] arr1, int[][] arr2) {
-        int[][] answer = new int[arr1.length][arr1[0].length];
-        for (int i = 0; i < arr1.length; i++) {
-            for (int j = 0; j < arr1[0].length; j++)
-                answer[i][j] = arr1[i][j] + arr2[i][j];
-        }
-        return answer;
-    }
-    public static int[] SkillCheck2_2(int N, int[] stages) {
-        stages = Arrays.stream(stages).sorted().toArray();
-        int max = stages[stages.length-1];
-        int[] checkStage = new int[max+1];
-        float[] checkFail = new float[max+1];
-        //System.out.println(stages[stages.length-1]);
-        for(int i:stages) checkStage[i] =0;
-        for(int i:stages) checkStage[i] +=1;
-        int stageP=0;
-        for(int i=1;i<stages.length-1;i++) {
-            checkFail[i] =checkStage[i]/(stages.length-stageP);
-            stageP+=checkStage[i];
-        }
-
-        int[] d = {1, 2, 3};
-        return d;
-    }
 
     public static void main(String[] args) {
 //        System.out.println(solutionL2_1(8, 12));
