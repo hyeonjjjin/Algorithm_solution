@@ -161,19 +161,7 @@ public class Solution_level2{
             answer += ContinuousNum(start, start + 1, n);
         }
         return answer;
-    }/*
-    // 괄호 변환 >> 블로그 XX
-    public static String solutionL2_11(String p) {
-        switch (CheckCorrect(p)) {
-            case 1:
-                return p; //균형잡히고 올바른 괄호 문자열
-            case 0: //균형잡히고 올바르지 않은 문자열
-//어디욘?
-
-        }
-
-        return "";
-    }*/
+    }
 
     public static void main(String[] args) {
 //        System.out.println(solutionL2_1(8, 12));
@@ -190,15 +178,7 @@ public class Solution_level2{
 //        System.out.println(solutionL2_8(88));
 //        String s = "-1 -2 -3 -4";
 //        System.out.println(solutionL2_9(s));
-//        System.out.println(solutionL2_10(15));맞아근데 왜빨갴ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+//        System.out.println(solutionL2_10(15));
         System.out.println(new SolutionL2_11("()()()))((").solve());
-
-
-//        System.out.println(SkillCheck1_1(4));
-//        String[] par = {"mislav", "stanko", "mislav", "ana"};
-//        String[] com = {"stanko", "ana", "mislav"};
-//        System.out.println(SkillCheck1_2(par, com));
-//        int[] stages = {2, 1, 2, 6, 2, 4, 3, 3};
-//        SkillCheck2_2(5, stages);
     }
 }

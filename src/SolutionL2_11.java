@@ -1,3 +1,5 @@
+// 괄호 변환 >> 블로그 XX
+
 public class SolutionL2_11 {
     private String input;
     private String u, v;
@@ -14,6 +16,15 @@ public class SolutionL2_11 {
 //        TODO: Algo
         return "hello ";
     }
+    /*
+    public static String solutionL2_11(String p) {
+        switch (CheckCorrect(p)) {
+            case 1:
+                return p; //균형잡히고 올바른 괄호 문자열
+            case 0: //균형잡히고 올바르지 않은 문자열
+        }
+        return "";
+    }*/
 
     private boolean CheckCorrect() {
         String[] pArray = input.split("");
