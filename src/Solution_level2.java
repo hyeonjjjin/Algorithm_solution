@@ -45,7 +45,7 @@ public class Solution_level2{
         return answer;
     }
 
-    //올바른 괄호 >> 블로그 XX +7
+    //올바른 괄호 >> 블로그 O +7
     public static boolean solutionL2_4(String s) {
         int check = 0;
         for (int i = 0; i < s.length(); i++) {
