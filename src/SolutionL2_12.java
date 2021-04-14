@@ -1,16 +1,16 @@
 //가장 큰 수 >> 블로그 XX
 public class SolutionL2_12 {
-    private String input;
+    private String input="";
 
     public SolutionL2_12(int[] numbers) {
-
+        this.input = input;
     }
 
 
-    public String SolutionL2_12(int[] numbers){
-        int len = input.length();
+    public String BigNum(){
+        //int len = input.length();
 
-        String answer = "";
+        String answer = "이게 맞나?";
         return answer;
     }
     public SolutionL2_12(String input) {

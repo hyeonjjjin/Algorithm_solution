@@ -181,7 +181,7 @@ public class Solution_level2{
 //        System.out.println(solutionL2_10(15));
         System.out.println(new SolutionL2_11("()()()))((").solve());
         int[] numbers = {6,10,2};
-        System.out.println(new SolutionL2_12(numbers));
+        System.out.println(new SolutionL2_12(numbers).BigNum());
 
     }
 }
