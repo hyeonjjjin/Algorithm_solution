@@ -163,7 +163,81 @@ public class Solution_level2{
         return answer;
     }
 
-    public static void main(String[] args) {
+    public static int MCT_April_1(int[] absolutes, boolean[] signs){
+        int answer=0;
+        for(int i=0;i<absolutes.length;i++){
+            if(signs[i]) answer+=absolutes[i];
+            else answer-= absolutes[i];
+        }
+        return answer;
+    }
+
+    public static boolean CheckCorrect(String s){
+        int small=0, mid=0, big=0;
+        char tmp=' ';
+        for(int i=0;i<s.length();i++){
+            tmp=s.charAt(i);
+            switch (tmp){
+                case '(': small+=1;break;
+                case ')': small-=1;if (small < 0) return false; break;
+                case '{': mid +=1;break;
+                case '}': mid -=1;if (mid < 0) return false;break;
+                case '[': big +=1;break;
+                case ']': big -=1;if (big < 0) return false;break;
+            }
+        }
+        if((small ==0) && ((mid ==0) && (big==0))) return true;
+        else return false;
+    }
+
+    public static int MCT_April_2(String s) {
+        int answer =0;
+        for(int i=0;i<s.length();i++){
+            if(CheckCorrect(s)) answer+=1 ;
+            if(i < s.length()-1)
+                s = s.substring(1,s.length())+ s.charAt(0);
+        }
+
+        return answer;
+    }
+
+    public static long MCT_April_3(int[] a, int[][] edges) {
+        long answer=0;
+        if(Arrays.stream(a).sum()!=0) return -1;
+        int u=0, v=0;
+        boolean after_u =false, after_v =false;
+        for(int i=0;i<edges.length;i++){
+            u=edges[i][0];v=edges[i][1];
+            for (int j = i + 1; j < edges.length; j++) {
+
+                if (u == edges[j][0] || u == edges[j][1]) {
+                    after_u = true;
+                    break;
+                }
+                if (v == edges[j][0] || v == edges[j][1]) {
+                    after_v = true;
+                    break;
+                }
+            }
+            if (after_u) {
+                a[u] += a[v];
+                answer+=a[v];
+                a[v] = 0;
+
+            }
+            else if(after_v) {
+                a[v] += a[u];
+                answer+=a[u];
+                a[u] = 0;
+            }
+            after_u=after_v=false;
+        }
+        answer += Math.abs(a[u]);
+        return answer;
+    }
+
+
+        public static void main(String[] args) {
 //        System.out.println(solutionL2_1(8, 12));
 //        System.out.println(solutionL2_2(10));
 //        System.out.println(solutionL2_2_reverse(14));
@@ -179,9 +253,18 @@ public class Solution_level2{
 //        String s = "-1 -2 -3 -4";
 //        System.out.println(solutionL2_9(s));
 //        System.out.println(solutionL2_10(15));
-        System.out.println(new SolutionL2_11("()()()))((").solve());
-        int[] numbers = {6,10,2};
-        System.out.println(new SolutionL2_12(numbers).BigNum());
+//        System.out.println(new SolutionL2_11("()()()))((").solve());
+//        int[] numbers = {6,10,2};
+//        System.out.println(new SolutionL2_12(numbers).BigNum());
+        int[] absolutes = {1,2,3};
+        boolean[] signs = {false, false, true};
+        System.out.println(MCT_April_1(absolutes, signs));
 
-    }
+        String s = "}}}";
+        System.out.println(MCT_April_2(s));
+
+        int[] a = {-5,0,2,1,2};
+        int[][] edges = {{0,1},{3,4},{2,3},{0,3}};
+        System.out.println(MCT_April_3(a,edges));
+        }
 }
