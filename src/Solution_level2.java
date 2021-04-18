@@ -197,7 +197,6 @@ public class Solution_level2{
             if(i < s.length()-1)
                 s = s.substring(1,s.length())+ s.charAt(0);
         }
-
         return answer;
     }
 
