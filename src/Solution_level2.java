@@ -152,9 +152,6 @@ public class Solution_level2{
         else if ((sum + end) == n) return 1;
         else return 0;
     }
-
-
-
     public static int solutionL2_10(int n) {
         int answer = 1;
         //시작 지점은 n/2까지 왜냐면 그이상은 더하면 n보다 크니까
@@ -164,6 +161,18 @@ public class Solution_level2{
         return answer;
     }
 
+    public static int[][] solutionL2_15(int[][] arr1, int[][] arr2){
+        int[][] answer= new int[arr1.length][arr1[0].length];
+        for(int i=0;i<arr1.length;i++){
+            for(int j=0;j<arr1[0].length ;j++){
+                answer[i][j]=arr1[i][0]*arr2[0][j];
+                for(int k=1;(k)<arr1[0].length && (k)<arr1.length;k++){
+                    answer[i][j]+=arr1[i][k]*arr2[k][j];
+                }
+            }
+        }
+        return answer;
+    }
 
 
     public static int MCT_April_1(int[] absolutes, boolean[] signs){
@@ -265,5 +274,15 @@ public class Solution_level2{
         int[] a = {-5,0,2,1,2};
         int[][] edges = {{0,1},{3,4},{2,3},{0,3}};
         System.out.println(MCT_April_3(a,edges));
+
+        int[][] arr1={{2,3,2},{4,2,4},{3,1,4}};
+        int[][] arr2={{5,4,3},{2,4,1},{3,1,1}};
+
+        int[][] ans;
+        ans = solutionL2_15(arr1, arr2);
+        System.out.println(ans[0][0]);
+        System.out.println(ans[1].toString());
+
+
         }
 }
