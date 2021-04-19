@@ -154,6 +154,7 @@ public class Solution_level2{
     }
 
 
+
     public static int solutionL2_10(int n) {
         int answer = 1;
         //시작 지점은 n/2까지 왜냐면 그이상은 더하면 n보다 크니까
@@ -163,6 +164,8 @@ public class Solution_level2{
         return answer;
     }
 
+
+
     public static int MCT_April_1(int[] absolutes, boolean[] signs){
         int answer=0;
         for(int i=0;i<absolutes.length;i++){
@@ -171,7 +174,6 @@ public class Solution_level2{
         }
         return answer;
     }
-
     public static boolean CheckCorrect(String s){
         int small=0, mid=0, big=0;
         char tmp=' ';
@@ -189,7 +191,6 @@ public class Solution_level2{
         if((small ==0) && ((mid ==0) && (big==0))) return true;
         else return false;
     }
-
     public static int MCT_April_2(String s) {
         int answer =0;
         for(int i=0;i<s.length();i++){
@@ -199,7 +200,6 @@ public class Solution_level2{
         }
         return answer;
     }
-
     public static long MCT_April_3(int[] a, int[][] edges) {
         long answer=0;
         if(Arrays.stream(a).sum()!=0) return -1;
