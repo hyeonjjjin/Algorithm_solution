@@ -185,7 +185,6 @@ public class Solution_level2{
         ArrayList<String> check = new ArrayList<>();
         int index=0;
         for(String word: words){
-            //check.remove(index);
             if(check.contains(word)){
                 answer[0]= index%n+1;
                 answer[1]= index/n+1;
