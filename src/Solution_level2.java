@@ -180,17 +180,20 @@ public class Solution_level2{
         return answer;
     }
 
+    //영어 끝말잇기 >> 블로그 XX +5
     public static int[] solutionL2_16(int n, String[] words) {
         int[] answer = new int[2];
         ArrayList<String> check = new ArrayList<>();
+        char last=' ';
         int index=0;
         for(String word: words){
-            if(check.contains(word)){
+            if(((index!=0)&&(last != word.charAt(0)))||check.contains(word) || word.length()==1){
                 answer[0]= index%n+1;
                 answer[1]= index/n+1;
                 return answer;
             }
             check.add(word);
+            last = word.charAt(word.length()-1);
             index++;
         }
         answer[0]=0; answer[1]=0;
