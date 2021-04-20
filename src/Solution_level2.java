@@ -162,15 +162,19 @@ public class Solution_level2{
     }
 
     public static int[][] solutionL2_15(int[][] arr1, int[][] arr2){
+        /*
         int[][] answer= new int[arr1.length][arr1[0].length];
+
         for(int i=0;i<arr1.length;i++){
             for(int j=0;j<arr1[0].length ;j++){
                 answer[i][j]=arr1[i][0]*arr2[0][j];
-                for(int k=1;(k)<arr1[0].length && (k)<arr1.length;k++){
+                for(int k=1;(k)<arr1[0].length;k++){
                     answer[i][j]+=arr1[i][k]*arr2[k][j];
                 }
             }
         }
+        */
+        int[][] answer = new int[0][];
         return answer;
     }
 
