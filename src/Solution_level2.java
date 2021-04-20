@@ -1,5 +1,6 @@
 import java.lang.Math;
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList; //import
 import java.util.Queue; //import
@@ -161,6 +162,7 @@ public class Solution_level2{
         return answer;
     }
 
+    //행렬의 곱셈 >> 블로그 XX  ㅇㅏ 안풀어!!!
     public static int[][] solutionL2_15(int[][] arr1, int[][] arr2){
         /*
         int[][] answer= new int[arr1.length][arr1[0].length];
@@ -175,6 +177,24 @@ public class Solution_level2{
         }
         */
         int[][] answer = new int[0][];
+        return answer;
+    }
+
+    public static int[] solutionL2_16(int n, String[] words) {
+        int[] answer = new int[2];
+        ArrayList<String> check = new ArrayList<>();
+        int index=0;
+        for(String word: words){
+            //check.remove(index);
+            if(check.contains(word)){
+                answer[0]= index%n+1;
+                answer[1]= index/n+1;
+                return answer;
+            }
+            check.add(word);
+            index++;
+        }
+        answer[0]=0; answer[1]=0;
         return answer;
     }
 
@@ -282,10 +302,14 @@ public class Solution_level2{
         int[][] arr1={{2,3,2},{4,2,4},{3,1,4}};
         int[][] arr2={{5,4,3},{2,4,1},{3,1,1}};
 
-        int[][] ans;
-        ans = solutionL2_15(arr1, arr2);
-        System.out.println(ans[0][0]);
-        System.out.println(ans[1].toString());
+        //int[][] ans;
+        //ans = solutionL2_15(arr1, arr2);
+        //System.out.println(ans[0][0]);
+        //System.out.println(ans[1].toString());
+
+        String[] words = {"tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"};
+        System.out.println(Arrays.toString(solutionL2_16(3, words)));
+
 
 
         }
