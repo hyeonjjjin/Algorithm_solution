@@ -306,8 +306,10 @@ public class Solution_level2{
         //System.out.println(ans[0][0]);
         //System.out.println(ans[1].toString());
 
-        String[] words = {"tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"};
-        System.out.println(Arrays.toString(solutionL2_16(3, words)));
+//        String[] words = {"tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"};
+//        String[] words = {"hello", "observe", "effect", "take", "either", "recognize", "encourage", "ensure", "establish", "hang", "gather", "refer", "reference", "estimate", "executive"};
+        String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
+        System.out.println(Arrays.toString(solutionL2_16(2, words)));
 
 
 
