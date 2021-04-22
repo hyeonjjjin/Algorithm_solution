@@ -162,7 +162,7 @@ public class Solution_level2{
         return answer;
     }
 
-    //행렬의 곱셈 >> 블로그 XX  conquer, devide 이용 재ㅣ시도..
+    //행렬의 곱셈 >> 블로그 XX  devide & conquer 라는 알고리즘이 있다고..? 재ㅣ시도..
     public static int[][] solutionL2_15(int[][] arr1, int[][] arr2){
         /*
         int[][] answer= new int[arr1.length][arr1[0].length];
