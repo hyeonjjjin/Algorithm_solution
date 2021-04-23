@@ -200,6 +200,11 @@ public class Solution_level2{
         return answer;
     }
 
+    //기능 개발 >> 블로그 XX
+    public static int[] solutionL2_17(int[] progresses, int[] speeds){
+        int[] answer={};
+        return answer;
+    }
 
     public static int MCT_April_1(int[] absolutes, boolean[] signs){
         int answer=0;
