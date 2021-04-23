@@ -203,21 +203,23 @@ public class Solution_level2{
     //기능 개발 >> 블로그 XX
     public static int[] solutionL2_17(int[] progresses, int[] speeds){
         int[] times = new int[progresses.length];
-        int[] answer=new int[progresses.length];
+        int[] answer = new int[progresses.length];
         int index=0, index_ans=0;
         for(int i=0;i<progresses.length;i++)
-            times[i] = (int) Math.ceil(progresses[i]/speeds[i]);
+            times[i] = (int) Math.ceil((100-progresses[i])/speeds[i]);
 
         for(int time:times){
-            if(index ==0) {answer[index_ans] += 1; index++;}
+            if(index ==0) answer[index_ans] += 1;
             else {
                 if (time <= times[index - 1])
                     answer[index_ans]++;
                 else answer[++index_ans]++;
-                index++;
             }
+            index++;
         }
-        return answer;
+        return Arrays.copyOf(answer, index_ans+1);
+        //System.out.println(answer.toString().substring(0,index_ans));
+        //return ans;
     }
 
     public static int MCT_April_1(int[] absolutes, boolean[] signs){
@@ -333,8 +335,8 @@ public class Solution_level2{
         String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
         System.out.println(Arrays.toString(solutionL2_16(2, words)));
 
-        int[] progresses={93, 30, 55};
-        int[] speeds={1,30,5};
+        int[] progresses={95, 90, 99, 99, 80, 99};
+        int[] speeds={1,1,1,1,1,1};
 
         System.out.println("기능개발: "+Arrays.toString(solutionL2_17(progresses, speeds)));
 
