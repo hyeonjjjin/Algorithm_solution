@@ -202,7 +202,21 @@ public class Solution_level2{
 
     //기능 개발 >> 블로그 XX
     public static int[] solutionL2_17(int[] progresses, int[] speeds){
-        int[] answer={};
+        int[] times = new int[progresses.length];
+        int[] answer=new int[progresses.length];
+        int index=0, index_ans=0;
+        for(int i=0;i<progresses.length;i++)
+            times[i] = (int) Math.ceil(progresses[i]/speeds[i]);
+
+        for(int time:times){
+            if(index ==0) {answer[index_ans] += 1; index++;}
+            else {
+                if (time <= times[index - 1])
+                    answer[index_ans]++;
+                else answer[++index_ans]++;
+                index++;
+            }
+        }
         return answer;
     }
 
@@ -319,6 +333,10 @@ public class Solution_level2{
         String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
         System.out.println(Arrays.toString(solutionL2_16(2, words)));
 
+        int[] progresses={93, 30, 55};
+        int[] speeds={1,30,5};
+
+        System.out.println("기능개발: "+Arrays.toString(solutionL2_17(progresses, speeds)));
 
 
         }
