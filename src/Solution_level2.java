@@ -211,15 +211,12 @@ public class Solution_level2{
         for(int time:times){
             if(index ==0) answer[index_ans] += 1;
             else {
-                if (time <= times[index - 1])
-                    answer[index_ans]++;
+                if (time <= times[index - 1]) answer[index_ans]++;
                 else answer[++index_ans]++;
             }
             index++;
         }
         return Arrays.copyOf(answer, index_ans+1);
-        //System.out.println(answer.toString().substring(0,index_ans));
-        //return ans;
     }
 
     public static int MCT_April_1(int[] absolutes, boolean[] signs){
