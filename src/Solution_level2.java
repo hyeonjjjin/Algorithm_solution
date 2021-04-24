@@ -333,8 +333,8 @@ public class Solution_level2{
         String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
         System.out.println(Arrays.toString(solutionL2_16(2, words)));
 
-        int[] progresses={95, 90, 99, 99, 80, 99};
-        int[] speeds={1,1,1,1,1,1};
+        int[] progresses={1,2};
+        int[] speeds={99,3};
 
         System.out.println("기능개발: "+Arrays.toString(solutionL2_17(progresses, speeds)));
 
