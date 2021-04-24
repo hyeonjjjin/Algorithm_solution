@@ -202,6 +202,7 @@ public class Solution_level2{
 
     //기능 개발 >> 블로그 XX
     public static int[] solutionL2_17(int[] progresses, int[] speeds){
+        //다른 조건이 있나,,
         int[] times = new int[progresses.length];
         int[] answer = new int[progresses.length];
         int index=0, index_ans=0;
