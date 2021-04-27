@@ -218,6 +218,15 @@ class Solution {
         return arr;
     }
 
+    public static int[] solution20(int[] array, int[][] commands){
+        int[] answer=new int[commands.length];
+        String arrayS=array.toString();
+        for(int idx=0;idx<commands.length;idx++){
+            arrayS.substring(commands[idx][0]-1,commands[idx][0]).chars().map(i->i-'0').sorted();
+        }
+        return answer;
+    }
+
     //여러줄 -tab : shift+tap
     public static void main(String[] args) {
         System.out.println(solution2(45));
