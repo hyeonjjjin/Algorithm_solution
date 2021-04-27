@@ -222,13 +222,15 @@ class Solution {
         int[] answer=new int[commands.length];
         String arrayS=array.toString();
         for(int idx=0;idx<commands.length;idx++){
-            arrayS.substring(commands[idx][0]-1,commands[idx][0]).chars().map(i->i-'0').sorted();
+            int[] tmp =arrayS.substring(commands[idx][0]-1,commands[idx][0]).chars().map(i->i-'0').sorted().toArray();
+            answer[idx]=tmp[commands[idx][2]-1];
         }
         return answer;
     }
 
     //여러줄 -tab : shift+tap
     public static void main(String[] args) {
+        /*
         System.out.println(solution2(45));
         System.out.println(solution3("12345"));
         System.out.println(solution4(-5,0));
@@ -249,8 +251,6 @@ class Solution {
         System.out.println(solution15(13));
         System.out.println(solution16("4444"));
 
-        //solution17
-        /*
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
@@ -267,6 +267,10 @@ class Solution {
         int[][] board={{0,0,0,0,0},{0,0,1,0,3},{0,2,5,0,1},{4,2,4,4,2},{3,5,1,3,1}};
         int[] moves = {1,5,3,5,1,2,1,4};
         System.out.println("19 "+solution19(board,moves));
+
+        int[] array={1, 5, 2, 6, 3, 7, 4};
+        int[][] commanders ={{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
+        System.out.println(Arrays.toString(solution20(array, commanders)));
 
     }
 
