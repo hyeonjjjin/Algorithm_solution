@@ -218,12 +218,18 @@ class Solution {
         return arr;
     }
 
-    public static int[] solution20(int[] array, int[][] commands){
+    //K번째 수 >>블로그XX +2
+    public static int[] solution21(int[] array, int[][] commands){
         int[] answer=new int[commands.length];
-        String arrayS=array.toString();
+        String arrayS=Arrays.toString(array).replaceAll("\\[","");
+        arrayS = arrayS.replaceAll(", ","");
+        //arrayS.replaceAll(" ","");
         for(int idx=0;idx<commands.length;idx++){
-            int[] tmp =arrayS.substring(commands[idx][0]-1,commands[idx][0]).chars().map(i->i-'0').sorted().toArray();
+            int[] tmp = Arrays.copyOfRange(array, commands[idx][0]-1, commands[idx][1]);
+            Arrays.sort(tmp);
+
             answer[idx]=tmp[commands[idx][2]-1];
+            System.out.println(tmp);
         }
         return answer;
     }
@@ -270,7 +276,7 @@ class Solution {
 
         int[] array={1, 5, 2, 6, 3, 7, 4};
         int[][] commanders ={{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
-        System.out.println(Arrays.toString(solution20(array, commanders)));
+        System.out.println(Arrays.toString(solution21(array, commanders)));
 
     }
 
