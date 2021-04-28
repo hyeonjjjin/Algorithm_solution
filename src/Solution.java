@@ -234,6 +234,13 @@ class Solution {
         return answer;
     }
 
+    //같은 숫자는 싫어 >>블로그XX
+    public static int[] solution22(int[] arr){
+        int[] answer={};
+
+        return answer;
+    }
+
     //여러줄 -tab : shift+tap
     public static void main(String[] args) {
         /*
