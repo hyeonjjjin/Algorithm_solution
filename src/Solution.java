@@ -236,9 +236,10 @@ class Solution {
 
     //같은 숫자는 싫어 >>블로그XX
     public static int[] solution22(int[] arr){
-        int[] answer={};
-
-        return answer;
+        int index=1;
+        for(int i=1;i<arr.length;i++)
+            if(arr[index-1]!=arr[i]) arr[index++]=arr[i];
+        return Arrays.copyOfRange(arr,0,index);
     }
 
     //여러줄 -tab : shift+tap
@@ -285,6 +286,8 @@ class Solution {
         int[][] commanders ={{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
         System.out.println(Arrays.toString(solution21(array, commanders)));
 
+        int[] arr22 = {4,4,4,3,3};
+        System.out.println("sol22: "+Arrays.toString(solution22(arr22)));
     }
 
 }
