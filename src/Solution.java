@@ -234,7 +234,7 @@ class Solution {
         return answer;
     }
 
-    //같은 숫자는 싫어 >>블로그XX
+    //같은 숫자는 싫어 >>블로그XX +1 야박해!!
     public static int[] solution22(int[] arr){
         int index=1;
         for(int i=1;i<arr.length;i++)

@@ -199,6 +199,12 @@ public class Solution_level2{
         answer[0]=0; answer[1]=0;
         return answer;
     }
+
+    //가장 큰 정사각형 찾기 >> 블로그 XX
+    public int solutionL2_17(int[][] board){
+
+        return 0;
+    }
         public static void main(String[] args) {
 
         String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
