@@ -204,6 +204,8 @@ public class Solution_level2{
     public int solutionL2_17(int[][] board){
         //정사각형이라..
         //가로로 한개~max 각각 정사각형이 되는지 확인?
+        //만약 가로 5개짜리 정사각형을 확인한다면 아래로 5줄 각각 1이 연속 5개 있으며 start 지점이 같은지 확인
+
         return 0;
     }
         public static void main(String[] args) {
