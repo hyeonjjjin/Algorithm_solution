@@ -202,7 +202,8 @@ public class Solution_level2{
 
     //가장 큰 정사각형 찾기 >> 블로그 XX
     public int solutionL2_17(int[][] board){
-
+        //정사각형이라..
+        //가로로 한개~max 각각 정사각형이 되는지 확인?
         return 0;
     }
         public static void main(String[] args) {
