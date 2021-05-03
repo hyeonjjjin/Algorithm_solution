@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList; //import
 import java.util.Queue; //import
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Solution_level2{
 
@@ -212,11 +214,11 @@ public class Solution_level2{
 
 
     public static boolean solutionL2_18(String[] phone_book) {
-        int index=0;
+        String numAll = Arrays.toString(phone_book).replace("[", ", ");
         for(String phoneNum:phone_book){
-            phone_book[index]="";
-            if(Arrays.toString(phone_book).replace("[",", ").contains(", "+phoneNum)) return false;
-            phone_book[index++]=phoneNum;
+            Pattern pattern = Pattern.compile(", "+phoneNum);
+            Matcher matcher = pattern.matcher(numAll);
+            if( matcher.results().count()>1) return false;
         }
         return true;
     }
