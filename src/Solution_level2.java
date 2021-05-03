@@ -212,9 +212,7 @@ public class Solution_level2{
 
 
     public boolean solutionL2_18(String[] phone_book) {
-        for(String phoneNum:phone_book){
 
-        }
         return true;
     }
         public static void main(String[] args) {
