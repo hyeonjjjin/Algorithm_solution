@@ -215,8 +215,7 @@ public class Solution_level2{
         int index=0;
         for(String phoneNum:phone_book){
             phone_book[index]="";
-            String phone_all = Arrays.toString(phone_book);
-            if(phone_all.contains(", "+phoneNum)||phone_all.contains("["+phoneNum)) return false;
+            if(Arrays.toString(phone_book).replace("[",", ").contains(", "+phoneNum)) return false;
             phone_book[index++]=phoneNum;
         }
         return true;
@@ -227,7 +226,7 @@ public class Solution_level2{
         System.out.println(Arrays.toString(solutionL2_16(2, words)));
 
 
-        String[] phone_book = {"119", "97674223", "1195524421"};
+        String[] phone_book = {"123","456","789"};
         System.out.println(solutionL2_18(phone_book));
 
         }
