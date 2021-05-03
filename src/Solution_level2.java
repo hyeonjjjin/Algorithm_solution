@@ -211,14 +211,24 @@ public class Solution_level2{
     }
 
 
-    public boolean solutionL2_18(String[] phone_book) {
-
+    public static boolean solutionL2_18(String[] phone_book) {
+        int index=0;
+        for(String phoneNum:phone_book){
+            phone_book[index]="";
+            String phone_all = Arrays.toString(phone_book);
+            if(phone_all.contains(", "+phoneNum)||phone_all.contains("["+phoneNum)) return false;
+            phone_book[index++]=phoneNum;
+        }
         return true;
     }
         public static void main(String[] args) {
 
         String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
         System.out.println(Arrays.toString(solutionL2_16(2, words)));
+
+
+        String[] phone_book = {"119", "97674223", "1195524421"};
+        System.out.println(solutionL2_18(phone_book));
 
         }
 }
