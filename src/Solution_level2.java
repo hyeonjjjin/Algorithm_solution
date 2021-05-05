@@ -227,7 +227,6 @@ public class Solution_level2{
         String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
         System.out.println(Arrays.toString(solutionL2_16(2, words)));
 
-
         String[] phone_book = {"123","456","789"};
         System.out.println(solutionL2_18(phone_book));
 
