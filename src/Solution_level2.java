@@ -222,6 +222,12 @@ public class Solution_level2{
         }
         return true;
     }
+
+
+    public static int solutionL2_19(String s) {
+        return 0;
+    }
+
         public static void main(String[] args) {
 
         String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
