@@ -225,6 +225,8 @@ public class Solution_level2{
 
     //짝지어 제거하기 >> 블로그XX
     public static int solutionL2_19(String s) {
+        s = s.replaceAll("[a]{2}","");
+        System.out.println(s);
         return 0;
     }
 
@@ -236,5 +238,6 @@ public class Solution_level2{
         String[] phone_book = {"0"};
         System.out.println(solutionL2_18(phone_book));
 
+        System.out.println(solutionL2_19("baabaa"));
         }
 }
