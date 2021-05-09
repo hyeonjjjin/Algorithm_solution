@@ -223,7 +223,7 @@ public class Solution_level2{
         return true;
     }
 
-
+    //짝지어 제거하기 >> 블로그XX
     public static int solutionL2_19(String s) {
         return 0;
     }
