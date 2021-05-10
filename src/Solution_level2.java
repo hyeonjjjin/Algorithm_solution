@@ -227,8 +227,10 @@ public class Solution_level2{
     public static int solutionL2_19(String s) {
         boolean canRemove = true;
         char last=' ';
+        int start=-1, end =-1;
         while(s.length()>0 && canRemove){
             for(int i=0;i<s.length();i++){
+                if(last != s.charAt(i)) {if(canRemove) s=s.substring(end+1,s.length()); else start=i;}
 
             }
         }
