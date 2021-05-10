@@ -225,13 +225,18 @@ public class Solution_level2{
 
     //짝지어 제거하기 >> 블로그XX
     public static int solutionL2_19(String s) {
-        boolean canRemove = true;
-        char last=' ';
-        int start=-1, end =-1;
-        while(s.length()>0 && canRemove){
-            for(int i=0;i<s.length();i++){
-                if(last != s.charAt(i)) {if(canRemove) s=s.substring(end+1,s.length()); else start=i;}
-
+        boolean canRemove = false;
+        char last=s.charAt(0);
+        int start=0, end =-1;
+        while(s.length()>0){
+            for(int i=1;i<s.length();i++){
+                System.out.println(s);
+                if(last != s.charAt(i)) {
+                    if(canRemove) s=s.substring(0,start)+s.substring(i+1,s.length()); else start=i;
+                    i=s.length();
+                }
+                else if(last == s.charAt(i) ) canRemove = true;
+                if(i!=s.length())last = s.charAt(i);
             }
         }
         System.out.println(s);
@@ -241,11 +246,11 @@ public class Solution_level2{
         public static void main(String[] args) {
 
         String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
-        System.out.println(Arrays.toString(solutionL2_16(2, words)));
+        System.out.println("16: "+Arrays.toString(solutionL2_16(2, words)));
 
         String[] phone_book = {"0"};
-        System.out.println(solutionL2_18(phone_book));
+        System.out.println("18: "+solutionL2_18(phone_book));
 
-        System.out.println(solutionL2_19("baabaa"));
+        System.out.println("19:"+ solutionL2_19("baabaa"));
         }
 }
