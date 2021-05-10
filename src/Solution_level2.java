@@ -225,7 +225,13 @@ public class Solution_level2{
 
     //짝지어 제거하기 >> 블로그XX
     public static int solutionL2_19(String s) {
-        s = s.replaceAll("[a]{2}","");
+        boolean canRemove = true;
+        char last=' ';
+        while(s.length()>0 && canRemove){
+            for(int i=0;i<s.length();i++){
+
+            }
+        }
         System.out.println(s);
         return 0;
     }
