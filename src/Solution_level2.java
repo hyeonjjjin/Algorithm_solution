@@ -260,6 +260,6 @@ public class Solution_level2{
     String[] phone_book = {"0"};
     System.out.println("18: "+solutionL2_18(phone_book));
 
-    System.out.println("19:"+ solutionL2_19("baabaa"));
+    System.out.println("19:"+ solutionL2_19("cdcd"));
     }
 }
