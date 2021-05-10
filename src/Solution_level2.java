@@ -225,32 +225,41 @@ public class Solution_level2{
 
     //짝지어 제거하기 >> 블로그XX
     public static int solutionL2_19(String s) {
-        boolean canRemove = false;
-        char last=s.charAt(0);
-        int start=0, end =-1;
-        while(s.length()>0){
-            for(int i=1;i<s.length();i++){
+        int flag = 1;
+        while (s.length() > 0 && flag>0) {
+            flag=0;
+            char last = s.charAt(0);
+            int start = 0;
+            boolean canRemove = false;
+            for (int i = 1; i < s.length(); i++) {
                 System.out.println(s);
-                if(last != s.charAt(i)) {
-                    if(canRemove) s=s.substring(0,start)+s.substring(i+1,s.length()); else start=i;
-                    i=s.length();
+                if (last != s.charAt(i)) {
+                    if (canRemove) {
+                        s = s.substring(0, start) + s.substring(i);
+                        i = s.length();
+                        flag=1;
+                    } else start = i;
+                    //
+                } else if (last == s.charAt(i)) canRemove = true;
+                if (i != s.length()) last = s.charAt(i);
+                if (i == (s.length() - 1) && canRemove) {
+                    s = s.substring(0, start) + s.substring(i+1);
                 }
-                else if(last == s.charAt(i) ) canRemove = true;
-                if(i!=s.length())last = s.charAt(i);
             }
+            System.out.println(s);
         }
-        System.out.println(s);
-        return 0;
+        if(s.length()==0) return 1;
+        else return 0;
     }
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
 
-        String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
-        System.out.println("16: "+Arrays.toString(solutionL2_16(2, words)));
+    String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
+    System.out.println("16: "+Arrays.toString(solutionL2_16(2, words)));
 
-        String[] phone_book = {"0"};
-        System.out.println("18: "+solutionL2_18(phone_book));
+    String[] phone_book = {"0"};
+    System.out.println("18: "+solutionL2_18(phone_book));
 
-        System.out.println("19:"+ solutionL2_19("baabaa"));
-        }
+    System.out.println("19:"+ solutionL2_19("baabaa"));
+    }
 }
