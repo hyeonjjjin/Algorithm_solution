@@ -225,6 +225,9 @@ public class Solution_level2{
 
     //짝지어 제거하기 >> 블로그XX
     public static int solutionL2_19(String s) {
+        //baabaa cacaa 같은 알파벳이 두 개 , 사이에 지울 수 있다면 ???? 그냥 앞-끝 확인하는게 맞지 않나... stack?
+        // stack에 넣고 겹치면 pop , stack에 담긴건 다시 앞에 붙이고? 이건 별로..
+        // 반복되는걸 확인할 함수는 없나..
         int flag = 1;
         while (s.length() > 0 && flag>0) {
             flag=0;
