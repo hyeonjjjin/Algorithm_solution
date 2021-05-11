@@ -228,29 +228,27 @@ public class Solution_level2{
         //baabaa cacaa 같은 알파벳이 두 개 , 사이에 지울 수 있다면 ???? 그냥 앞-끝 확인하는게 맞지 않나... stack?
         // stack에 넣고 겹치면 pop , stack에 담긴건 다시 앞에 붙이고? 이건 별로..
         // 반복되는걸 확인할 함수는 없나..
-        int flag = 1;
-        while (s.length() > 0 && flag>0) {
-            flag=0;
-            char last = s.charAt(0);
-            int start = 0;
-            boolean canRemove = false;
-            for (int i = 1; i < s.length(); i++) {
-                System.out.println(s);
-                if (last != s.charAt(i)) {
-                    if (canRemove) {
-                        s = s.substring(0, start) + s.substring(i);
-                        i = s.length();
-                        flag=1;
-                    } else start = i;
-                    //
-                } else if (last == s.charAt(i)) canRemove = true;
-                if (i != s.length()) last = s.charAt(i);
-                if (i == (s.length() - 1) && canRemove) {
-                    s = s.substring(0, start) + s.substring(i+1);
-                }
-            }
+        char last = s.charAt(0);
+        int start = 0;
+        boolean canRemove = false;
+        for (int i = 1; i < s.length(); i++) {
             System.out.println(s);
+            if (last != s.charAt(i)) {
+                if (canRemove) {
+                    s = s.substring(0, start) + s.substring(i);
+                    i = 0;
+                    last = s.charAt(0);
+                    start = 0;
+                    canRemove = false;
+                } else start = i;
+            } else if (last == s.charAt(i)) canRemove = true;
+            last = s.charAt(i);
+            if (i == (s.length() - 1) && canRemove) {
+                s = s.substring(0, start) + s.substring(i+1);
+            }
         }
+        System.out.println(s);
+        //}
         if(s.length()==0) return 1;
         else return 0;
     }
@@ -263,6 +261,6 @@ public class Solution_level2{
     String[] phone_book = {"0"};
     System.out.println("18: "+solutionL2_18(phone_book));
 
-    System.out.println("19:"+ solutionL2_19("cdcd"));
+    System.out.println("19:"+ solutionL2_19("baabaa"));
     }
 }
