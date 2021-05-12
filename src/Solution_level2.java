@@ -233,7 +233,6 @@ public class Solution_level2{
         boolean canRemove = false;
         String[] list = new String[s.length()];
         list = s.split("");
-        System.out.println(list[0]);
         for (int i = 1; i < s.length(); i++) {
             System.out.println(s);
             if (last != s.charAt(i)) {
