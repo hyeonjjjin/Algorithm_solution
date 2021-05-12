@@ -228,28 +228,34 @@ public class Solution_level2{
         //baabaa cacaa 같은 알파벳이 두 개 , 사이에 지울 수 있다면 ???? 그냥 앞-끝 확인하는게 맞지 않나... stack?
         // stack에 넣고 겹치면 pop , stack에 담긴건 다시 앞에 붙이고? 이건 별로..
         // 반복되는걸 확인할 함수는 없나..
-        char last = s.charAt(0);
-        int start = 0;
-        boolean canRemove = false;
         String[] list = new String[s.length()];
         list = s.split("");
+
+        String last = list[0];
+        int start = 0;
+        boolean canRemove = false;
+
         for (int i = 1; i < s.length(); i++) {
             System.out.println(s);
-            if (last != s.charAt(i)) {
+            //if (last != s.charAt(i)) {
+            if (last != list[i]) {
                 if (canRemove) {
-                    s = s.substring(0, start) + s.substring(i);
+                    list[start]="";
+                    list = Arrays.toString(list).split("");
+                    //s = s.substring(0, start) + s.substring(i);
                     i = 0;
-                    last = s.charAt(0);
+                    last = list[0];
                     start = 0;
                     canRemove = false;
                 } else start = i;
-            } else if (last == s.charAt(i)) canRemove = true;
-            last = s.charAt(i);
+            } else if (last == list[i]) {canRemove = true; list[i]="";}
+            last = list[i];
             if (i == (s.length() - 1) && canRemove) {
                 s = s.substring(0, start) + s.substring(i+1);
             }
         }
-        System.out.println(s);
+        //System.out.println(s);
+        for(int k=0;k<list.length;k++) System.out.println("이건가"+list[k]);
         //}
         if(s.length()==0) return 1;
         else return 0;
