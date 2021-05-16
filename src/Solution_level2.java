@@ -223,26 +223,40 @@ public class Solution_level2{
         return true;
     }
 
+    public static String rep(String s){
+        int checker=0;
+        for(int j=0;j<s.length()-1;j++){
+            if(s.charAt(j)==s.charAt(j+1)) {
+                if(j!=s.length()-2){
+                for(int i=j+2;i<s.length();i++) {
+                    if(s.charAt(j)==s.charAt(i)) {checker=i; }
+                    else {checker=i-1;i=s.length();}
+                }
+                s = s.substring(0, j) + s.substring(checker + 1);
+                j=-1;
+                }else s="";
+            }
+        }
+        return s;
+    }
     //짝지어 제거하기 >> 블로그XX
     public static int solutionL2_19(String s) {
         //baabaa cacaa 같은 알파벳이 두 개 , 사이에 지울 수 있다면 ???? 그냥 앞-끝 확인하는게 맞지 않나... stack?
         // stack에 넣고 겹치면 pop , stack에 담긴건 다시 앞에 붙이고? 이건 별로..
         // 반복되는걸 확인할 함수는 없나..
         int checker=0;
+        /*
         if(s.charAt(0)==s.charAt(1)) {
             for(int i=2;i<s.length();i++) {
                 if(s.charAt(0)==s.charAt(i)) {checker=i; }
                 else i=s.length();
             }
             s=s.substring(checker+1);
-        }
-        else{
-            for(int j=1;j<s.length();j++){
-                if(s.charAt(0)==s.charAt(1))
-            }
-        }
-        System.out.println(s);
-
+        }*/
+       // else{
+       if(rep(s)=="") return 1;
+       else return 0;
+        //}
 
         /*
                 String[] list = new String[s.length()];
@@ -277,7 +291,7 @@ public class Solution_level2{
         else return 0;
 
          */
-        return 0;
+
     }
 
     public static void main(String[] args) {
@@ -288,6 +302,6 @@ public class Solution_level2{
     String[] phone_book = {"0"};
     System.out.println("18: "+solutionL2_18(phone_book));
 
-    System.out.println("19:"+ solutionL2_19("bbbbaaaabcaaccc"));
+    System.out.println("19:"+ solutionL2_19("baabaa"));
     }
 }
