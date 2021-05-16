@@ -228,15 +228,22 @@ public class Solution_level2{
         //baabaa cacaa 같은 알파벳이 두 개 , 사이에 지울 수 있다면 ???? 그냥 앞-끝 확인하는게 맞지 않나... stack?
         // stack에 넣고 겹치면 pop , stack에 담긴건 다시 앞에 붙이고? 이건 별로..
         // 반복되는걸 확인할 함수는 없나..
-
-
         int checker=0;
         if(s.charAt(0)==s.charAt(1)) {
             for(int i=2;i<s.length();i++) {
-                if(s.charAt(0)==s.charAt(i)) {checker=i; i=s.length();}
+                if(s.charAt(0)==s.charAt(i)) {checker=i; }
+                else i=s.length();
             }
-            s=s.substring(checker,s.length());
+            s=s.substring(checker+1);
         }
+        else{
+            for(int j=1;j<s.length();j++){
+                if(s.charAt(0)==s.charAt(1))
+            }
+        }
+        System.out.println(s);
+
+
         /*
                 String[] list = new String[s.length()];
         list = s.split("");
@@ -281,6 +288,6 @@ public class Solution_level2{
     String[] phone_book = {"0"};
     System.out.println("18: "+solutionL2_18(phone_book));
 
-    System.out.println("19:"+ solutionL2_19("baaaabcaaccc"));
+    System.out.println("19:"+ solutionL2_19("bbbbaaaabcaaccc"));
     }
 }
