@@ -242,11 +242,12 @@ class Solution {
         return Arrays.copyOfRange(arr,0,index);
     }
 
+    // 완주하지 못한 선수 >> 블로그 XX +4
     public static String solution23(String[] participant, String[] completion){
         Arrays.sort(participant);
         Arrays.sort(completion);
         for(int i=0;i<completion.length;i++){
-            if(completion[i]!= participant[i])
+            if(!completion[i].equals(participant[i]))// != 연산자로 쓰면 제대로 실행 X
                 return participant[i];
         }
         return participant[participant.length-1];
