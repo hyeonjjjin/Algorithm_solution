@@ -242,6 +242,21 @@ class Solution {
         return Arrays.copyOfRange(arr,0,index);
     }
 
+    public static String solution23(String[] participant, String[] completion){
+        int[] hash=new int[participant.length];
+        int index=0;
+        Arrays.sort(participant);
+        Arrays.sort(completion);
+        for(int i=0;i<completion.length;i++){
+            if(completion[i]!= participant[i])
+                return participant[i];
+        }
+        return participant[participant.length-1];
+
+    }
+
+
+
     //여러줄 -tab : shift+tap
     public static void main(String[] args) {
         /*
@@ -273,7 +288,7 @@ class Solution {
             answer+="*";
         for(int j=0;j<b;j++)
             System.out.println(answer);
-        */
+
 
         int[] nums={1,2,7,6,4};
         System.out.println(solution18(nums));
@@ -285,9 +300,14 @@ class Solution {
         int[] array={1, 5, 2, 6, 3, 7, 4};
         int[][] commanders ={{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
         System.out.println(Arrays.toString(solution21(array, commanders)));
-
+        */
         int[] arr22 = {4,4,4,3,3};
         System.out.println("sol22: "+Arrays.toString(solution22(arr22)));
+
+        String[] participant={"leo", "kiki", "eden"};
+        String[] completion={"eden", "kiki"};
+        System.out.println("sol23: "+(solution23(participant,completion)));
+
     }
 
 }
