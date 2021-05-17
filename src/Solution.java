@@ -251,7 +251,6 @@ class Solution {
                 return participant[i];
         }
         return participant[participant.length-1];
-
     }
 
 
