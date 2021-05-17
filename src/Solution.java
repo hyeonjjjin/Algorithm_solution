@@ -253,6 +253,21 @@ class Solution {
         return participant[participant.length-1];
     }
 
+    //제일 작은 수 제거하기
+    public static int[] solution24(int[] arr){
+        int[] answer=new int[arr.length-1];
+        if(arr.length==1) {answer[0]=-1; return answer;}
+        else {
+            String tmp = Arrays.toString(arr);
+            Arrays.sort(arr);
+            char min= (char) (arr[0]+'0');
+
+            System.out.println(tmp.indexOf(min));
+           // tmp = tmp.substring(0,tmp.indexOf(min))+tmp.substring(tmp.indexOf(min));
+           // return  Arrays.asList(tmp).stream().mapToInt(Integer::parseInt).toArray();
+        }
+        return answer;
+    }
 
 
     //여러줄 -tab : shift+tap
@@ -305,6 +320,11 @@ class Solution {
         String[] participant={"mislav", "stanko", "mislav", "ana"};
         String[] completion={"stanko", "ana", "mislav"};
         System.out.println("sol23: "+(solution23(participant,completion)));
+
+        int[] arr = {4,3,2,1};
+
+        System.out.println("sol24: "+(Arrays.toString(solution24(arr))));
+
 
     }
 
