@@ -243,8 +243,6 @@ class Solution {
     }
 
     public static String solution23(String[] participant, String[] completion){
-        int[] hash=new int[participant.length];
-        int index=0;
         Arrays.sort(participant);
         Arrays.sort(completion);
         for(int i=0;i<completion.length;i++){
@@ -304,8 +302,8 @@ class Solution {
         int[] arr22 = {4,4,4,3,3};
         System.out.println("sol22: "+Arrays.toString(solution22(arr22)));
 
-        String[] participant={"leo", "kiki", "eden"};
-        String[] completion={"eden", "kiki"};
+        String[] participant={"mislav", "stanko", "mislav", "ana"};
+        String[] completion={"stanko", "ana", "mislav"};
         System.out.println("sol23: "+(solution23(participant,completion)));
 
     }
