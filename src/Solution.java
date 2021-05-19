@@ -263,11 +263,14 @@ class Solution {
         else {
             int[] answer= new int[arr.length-1];
             String tmp = Arrays.toString(arr);
-            Arrays.sort(arr); char min= (char) (arr[0]+'0');
+            Arrays.sort(arr); char min= (char)(arr[0]+'0');
+
             tmp = tmp.replaceAll("\\[","");
             tmp = tmp.replaceAll(", ","");
             tmp = tmp.replaceAll("]","");
-            tmp = tmp.substring(0,tmp.indexOf(min))+tmp.substring(tmp.indexOf(min)+1);
+            if(arr[0]>=0) tmp = tmp.substring(0,tmp.indexOf(min))+tmp.substring(tmp.indexOf(min)+1);
+            else {
+                tmp = tmp.substring(0,tmp.indexOf(min))+tmp.substring(tmp.indexOf(min)+1);}
             return  Stream.of(tmp.split("")).mapToInt(Integer::parseInt).toArray();
         }
     }
@@ -324,7 +327,7 @@ class Solution {
         String[] completion={"stanko", "ana", "mislav"};
         System.out.println("sol23: "+(solution23(participant,completion)));
 
-        int[] arr = {4,3,2,1};
+        int[] arr = {4,3,-2,1};
 
         System.out.println("sol24: "+(Arrays.toString(solution24(arr))));
 
