@@ -263,18 +263,12 @@ class Solution {
         else {
             int[] answer= new int[arr.length-1];
             String tmp = Arrays.toString(arr);
-            Arrays.sort(arr);
-            char min= (char) (arr[0]+'0');
+            Arrays.sort(arr); char min= (char) (arr[0]+'0');
             tmp = tmp.replaceAll("\\[","");
             tmp = tmp.replaceAll(", ","");
             tmp = tmp.replaceAll("]","");
-            System.out.println(min);
-            System.out.println(tmp);
-            System.out.println(tmp.indexOf(min));
             tmp = tmp.substring(0,tmp.indexOf(min))+tmp.substring(tmp.indexOf(min)+1);
-            System.out.println(tmp);
-
-            return  Arrays.asList(tmp).stream().mapToInt(Integer::parseInt).toArray();
+            return  Stream.of(tmp.split("")).mapToInt(Integer::parseInt).toArray();
         }
     }
 
