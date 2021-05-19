@@ -255,18 +255,27 @@ class Solution {
 
     //제일 작은 수 제거하기
     public static int[] solution24(int[] arr){
-        int[] answer=new int[arr.length-1];
-        if(arr.length==1) {answer[0]=-1; return answer;}
+        if(arr.length==1) {
+            int[] answer_1= new int[1];
+            answer_1[0]=-1;
+            return answer_1;
+        }
         else {
+            int[] answer= new int[arr.length-1];
             String tmp = Arrays.toString(arr);
             Arrays.sort(arr);
             char min= (char) (arr[0]+'0');
-
+            tmp = tmp.replaceAll("\\[","");
+            tmp = tmp.replaceAll(", ","");
+            tmp = tmp.replaceAll("]","");
+            System.out.println(min);
+            System.out.println(tmp);
             System.out.println(tmp.indexOf(min));
-           // tmp = tmp.substring(0,tmp.indexOf(min))+tmp.substring(tmp.indexOf(min));
-           // return  Arrays.asList(tmp).stream().mapToInt(Integer::parseInt).toArray();
+            tmp = tmp.substring(0,tmp.indexOf(min))+tmp.substring(tmp.indexOf(min)+1);
+            System.out.println(tmp);
+
+            return  Arrays.asList(tmp).stream().mapToInt(Integer::parseInt).toArray();
         }
-        return answer;
     }
 
 
