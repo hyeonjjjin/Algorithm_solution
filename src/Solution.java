@@ -254,25 +254,30 @@ class Solution {
     }
 
     //제일 작은 수 제거하기
-    public static int[] solution24(int[] arr){
-        if(arr.length==1) {
-            int[] answer_1= new int[1];
-            answer_1[0]=-1;
+    public static int[] solution24(int[] arr) {
+        if (arr.length == 1) {
+            int[] answer_1 = new int[1];
+            answer_1[0] = -1;
             return answer_1;
-        }
-        else {
-            int[] answer= new int[arr.length-1];
+        } else {
+            int[] answer = new int[arr.length - 1];
             String tmp = Arrays.toString(arr);
-            Arrays.sort(arr); char min= (char)(arr[0]+'0');
+            Arrays.sort(arr);
+            tmp = tmp.replaceAll("\\[", "");
+            tmp = tmp.replaceAll(", ", "");
+            tmp = tmp.replaceAll("]", "");
+            if (arr[0] >= 0) {
+                char min = (char) (arr[0] + '0');
+                tmp = tmp.substring(0, tmp.indexOf(min)) + tmp.substring(tmp.indexOf(min) + 1);
+            } else {//음수일 때
+                System.out.println(Math.abs(arr[0]) + '0');
+                //tmp = tmp.replaceAll((min),"")+tmp.substring(tmp.indexOf(min)+1);}
+            }
+            int[] an ={};
+            return an;//Stream.of(tmp.split("")).mapToInt(Integer::parseInt).toArray();
 
-            tmp = tmp.replaceAll("\\[","");
-            tmp = tmp.replaceAll(", ","");
-            tmp = tmp.replaceAll("]","");
-            if(arr[0]>=0) tmp = tmp.substring(0,tmp.indexOf(min))+tmp.substring(tmp.indexOf(min)+1);
-            else {
-                tmp = tmp.substring(0,tmp.indexOf(min))+tmp.substring(tmp.indexOf(min)+1);}
-            return  Stream.of(tmp.split("")).mapToInt(Integer::parseInt).toArray();
         }
+
     }
 
 
@@ -328,7 +333,7 @@ class Solution {
         System.out.println("sol23: "+(solution23(participant,completion)));
 
         int[] arr = {4,3,-2,1};
-
+        //System.out.println("흠"+('0'-(-1)));
         System.out.println("sol24: "+(Arrays.toString(solution24(arr))));
 
 
