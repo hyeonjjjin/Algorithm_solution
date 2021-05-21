@@ -266,6 +266,7 @@ class Solution {
             tmp = tmp.replaceAll("\\[", "");
             tmp = tmp.replaceAll(", ", "");
             tmp = tmp.replaceAll("]", "");
+
             if (arr[0] >= 0) {
                 char min = (char) (arr[0] + '0');
                 tmp = tmp.substring(0, tmp.indexOf(min)) + tmp.substring(tmp.indexOf(min) + 1);
