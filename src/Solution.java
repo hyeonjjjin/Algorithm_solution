@@ -270,15 +270,15 @@ class Solution {
                 char min = (char) (arr[0] + '0');
                 tmp = tmp.substring(0, tmp.indexOf(min)) + tmp.substring(tmp.indexOf(min) + 1);
             } else {//음수일 때
-                System.out.println(Math.abs(arr[0]) + '0');
-                //tmp = tmp.replaceAll((min),"")+tmp.substring(tmp.indexOf(min)+1);}
-            }
-            int[] an ={};
-            return an;//Stream.of(tmp.split("")).mapToInt(Integer::parseInt).toArray();
-
+                String min = "-"+(char)(Math.abs(arr[0]) + '0');
+                //System.out.println("-"+(char)(Math.abs(arr[0]) + '0'));
+                //System.out.println((char)(Math.abs(arr[0]) + '0'));
+                tmp = tmp.replaceAll(min,"");}
+            return Stream.of(tmp.split("")).mapToInt(Integer::parseInt).toArray();
         }
-
     }
+
+
 
 
     //여러줄 -tab : shift+tap
