@@ -263,22 +263,22 @@ class Solution {
             int[] answer = new int[arr.length - 1];
             String tmp = Arrays.toString(arr);
             Arrays.sort(arr);
-
-
+            String min = Integer.toString(arr[0]);
+            tmp = tmp.replaceAll(", "+min,"");
+            /*
             if (arr[0] >= 0) {
                 String min = ""+(char) (arr[0] + '0');
                 tmp = tmp.replaceAll(", "+min,"");
                 //tmp = tmp.substring(0, tmp.indexOf(min)) + tmp.substring(tmp.indexOf(min) + 1);
             } else {//음수일 때
-                String min = "-"+(char)(Math.abs(arr[0]) + '0');
+                String min = Integer.toString(arr[0]);//"-"+(char)(Math.abs(arr[0]) + '0');
                 //System.out.println("-"+(char)(Math.abs(arr[0]) + '0'));
                 //System.out.println((char)(Math.abs(arr[0]) + '0'));
                 tmp = tmp.replaceAll(", "+min,"");
-            }
+            }*/
             tmp = tmp.replaceAll("\\[", "");
-            tmp = tmp.replaceAll(", ", "");
             tmp = tmp.replaceAll("]", "");
-            return Stream.of(tmp.split("")).mapToInt(Integer::parseInt).toArray();
+            return Stream.of(tmp.split(", ")).mapToInt(Integer::parseInt).toArray();
         }
     }
 
@@ -336,7 +336,7 @@ class Solution {
         String[] completion={"stanko", "ana", "mislav"};
         System.out.println("sol23: "+(solution23(participant,completion)));
 
-        int[] arr = {4,3,-2,1};
+        int[] arr = {-4,30,-21,1};
         //System.out.println("흠"+('0'-(-1)));
         System.out.println("sol24: "+(Arrays.toString(solution24(arr))));
 
