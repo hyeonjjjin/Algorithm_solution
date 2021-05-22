@@ -253,7 +253,7 @@ class Solution {
         return participant[participant.length-1];
     }
 
-    //제일 작은 수 제거하기 >>블로그 XX
+    //제일 작은 수 제거하기 >>블로그 XX +2
     public static int[] solution24(int[] arr) {
         if (arr.length == 1) {
             int[] answer_1 = new int[1];
