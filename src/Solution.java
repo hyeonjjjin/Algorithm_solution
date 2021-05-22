@@ -263,18 +263,21 @@ class Solution {
             int[] answer = new int[arr.length - 1];
             String tmp = Arrays.toString(arr);
             Arrays.sort(arr);
-            tmp = tmp.replaceAll("\\[", "");
-            tmp = tmp.replaceAll(", ", "");
-            tmp = tmp.replaceAll("]", "");
+
 
             if (arr[0] >= 0) {
-                char min = (char) (arr[0] + '0');
-                tmp = tmp.substring(0, tmp.indexOf(min)) + tmp.substring(tmp.indexOf(min) + 1);
+                String min = ""+(char) (arr[0] + '0');
+                tmp = tmp.replaceAll(", "+min,"");
+                //tmp = tmp.substring(0, tmp.indexOf(min)) + tmp.substring(tmp.indexOf(min) + 1);
             } else {//음수일 때
                 String min = "-"+(char)(Math.abs(arr[0]) + '0');
                 //System.out.println("-"+(char)(Math.abs(arr[0]) + '0'));
                 //System.out.println((char)(Math.abs(arr[0]) + '0'));
-                tmp = tmp.replaceAll(min,"");}
+                tmp = tmp.replaceAll(", "+min,"");
+            }
+            tmp = tmp.replaceAll("\\[", "");
+            tmp = tmp.replaceAll(", ", "");
+            tmp = tmp.replaceAll("]", "");
             return Stream.of(tmp.split("")).mapToInt(Integer::parseInt).toArray();
         }
     }
