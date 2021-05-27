@@ -294,6 +294,11 @@ public class Solution_level2{
 
     }
 
+    //땅따먹기 >>블로그xx
+    public static int solutionL2_20(int[][] land){
+
+        return 0;
+    }
     public static void main(String[] args) {
 
     String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
