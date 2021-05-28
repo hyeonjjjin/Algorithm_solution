@@ -296,11 +296,14 @@ public class Solution_level2{
 
     //땅따먹기 >>블로그xx
     public static int solutionL2_20(int[][] land){
-        int answer=0;
+        int answer=0, prevIndex=0;
+        //첫 줄 지정 후 시작
+        //일단 이대로 하면서 prevIndex 안겹친다면 return하고 겹치면 탐색으로?
         for(int index=0;index< land.length;index++){
             Arrays.sort(land[index]);
             answer+=land[index][land[index].length-1];
         }
+        //복잡도가 n^n인데 이거..ㅎㅎㅎ
         return answer;
     }
     public static void main(String[] args) {
