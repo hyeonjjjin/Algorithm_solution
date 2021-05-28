@@ -296,8 +296,12 @@ public class Solution_level2{
 
     //땅따먹기 >>블로그xx
     public static int solutionL2_20(int[][] land){
-
-        return 0;
+        int answer=0;
+        for(int index=0;index< land.length;index++){
+            Arrays.sort(land[index]);
+            answer+=land[index][land[index].length-1];
+        }
+        return answer;
     }
     public static void main(String[] args) {
 
