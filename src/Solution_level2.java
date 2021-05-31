@@ -303,7 +303,6 @@ public class Solution_level2{
             Arrays.sort(land[index]);
             answer+=land[index][land[index].length-1];
         }
-        //복잡도가 n^n인데 이거..ㅎㅎㅎ
         return answer;
     }
     public static void main(String[] args) {
