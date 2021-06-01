@@ -305,6 +305,8 @@ public class Solution_level2{
         }
         return answer;
     }
+
+
     public static void main(String[] args) {
 
     String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
