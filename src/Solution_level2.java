@@ -221,6 +221,7 @@ public class Solution_level2{
         return true;
     }
 
+
     public static String rep(String s){
         int checker=0;
         for(int j=0;j<s.length()-1;j++){
@@ -291,6 +292,7 @@ public class Solution_level2{
          */
 
     }
+
 
     //땅따먹기 >>블로그xx
     public static int solutionL2_20(int[][] land){
