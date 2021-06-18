@@ -307,6 +307,13 @@ public class Solution_level2{
     }
 
 
+     // 타겟 넘버 >> 블로그 XX
+     public int solutionL2_21(int[] numbers, int target) {
+         int answer = 0;
+         return answer;
+     }
+
+
     public static void main(String[] args) {
 
     String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
