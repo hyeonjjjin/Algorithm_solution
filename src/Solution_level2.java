@@ -238,7 +238,7 @@ public class Solution_level2{
         }
         return s;
     }
-    //짝지어 제거하기 >> 블로그XX
+    //짝지어 제거하기 >> 블로그 XX
     public static int solutionL2_19(String s) {
         //baabaa cacaa 같은 알파벳이 두 개 , 사이에 지울 수 있다면 ???? 그냥 앞-끝 확인하는게 맞지 않나... stack?
         // stack에 넣고 겹치면 pop , stack에 담긴건 다시 앞에 붙이고? 이건 별로..
@@ -294,14 +294,14 @@ public class Solution_level2{
     }
 
 
-    //땅따먹기 >>블로그xx
+    //땅따먹기 >>블로그 xx
     public static int solutionL2_20(int[][] land){
-        int answer=0, prevIndex=0;
+        int answer = 0, prevIndex=0;
         //첫 줄 지정 후 시작
-        //일단 이대로 하면서 prevIndex 안겹친다면 return하고 겹치면 탐색으로?
-        for(int index=0;index< land.length;index++){
+        //일단 이대로 하면서 prevIndex 안겹친다면 return, 겹치면 탐색?
+        for(int index=0; index < land.length; index++){
             Arrays.sort(land[index]);
-            answer+=land[index][land[index].length-1];
+            answer += land[index][land[index].length-1];
         }
         return answer;
     }
@@ -310,12 +310,12 @@ public class Solution_level2{
      // 타겟 넘버 >> 블로그 XX
      public int solutionL2_21(int[] numbers, int target) {
          int answer = 0;
+
          return answer;
      }
 
 
     public static void main(String[] args) {
-
     String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
     System.out.println("16: "+Arrays.toString(solutionL2_16(2, words)));
 
@@ -326,6 +326,5 @@ public class Solution_level2{
 
     int[][] land={{1,2,3,5},{5,6,7,8},{4,3,2,1}};
     System.out.println("20:"+ solutionL2_20(land));
-
     }
 }
