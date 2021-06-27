@@ -221,7 +221,6 @@ public class Solution_level2{
         return true;
     }
 
-
     public static String rep(String s){
         int checker=0;
         for(int j=0;j<s.length()-1;j++){
@@ -293,7 +292,6 @@ public class Solution_level2{
 
     }
 
-
     //땅따먹기 >>블로그 xx
     public static int solutionL2_20(int[][] land){
         int answer = 0, prevIndex=0;
@@ -306,14 +304,12 @@ public class Solution_level2{
         return answer;
     }
 
-
      // 타겟 넘버 >> 블로그 XX
      public int solutionL2_21(int[] numbers, int target) {
          int answer = 0;
 
          return answer;
      }
-
 
     public static void main(String[] args) {
     String[] words = {"hello", "one", "even", "never", "now", "world", "draw"};
