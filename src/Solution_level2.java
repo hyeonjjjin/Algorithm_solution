@@ -210,7 +210,6 @@ public class Solution_level2{
         return 0;
     }
 
-
     public static boolean solutionL2_18(String[] phone_book) {
         String numAll = Arrays.toString(phone_book).replace("[", ", ");
         for(String phoneNum:phone_book){
