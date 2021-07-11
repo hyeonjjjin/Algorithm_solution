@@ -317,7 +317,7 @@ public class Solution_level2{
     String[] phone_book = {"0"};
     System.out.println("18: "+solutionL2_18(phone_book));
 
-    System.out.println("19:"+ solutionL2_19("baabaa"));
+    System.out.println("19:"+ solutionL2_19("baababrca"));
 
     int[][] land={{1,2,3,5},{5,6,7,8},{4,3,2,1}};
     System.out.println("20:"+ solutionL2_20(land));
