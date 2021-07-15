@@ -295,7 +295,7 @@ public class Solution_level2{
     public static int solutionL2_20(int[][] land){
         int answer = 0, prevIndex=0;
         //첫 줄 지정 후 시작
-        //일단 이대로 하면서 prevIndex 안겹친다면 return, 겹치면 탐색?
+        //일단 이대로 하면서 prevIndex 안겹친다면 return, 겹치면 탐색??
         for(int index=0; index < land.length; index++){
             Arrays.sort(land[index]);
             answer += land[index][land[index].length-1];
