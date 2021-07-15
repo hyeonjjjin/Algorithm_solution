@@ -24,7 +24,6 @@ public class SolutionL2_17 {
     public static void main(String[] args) {
         int[] progresses={1,2};
         int[] speeds={99,3};
-
         System.out.println("기능개발: "+Arrays.toString(solutionL2_17(progresses, speeds)));
     }
 }
