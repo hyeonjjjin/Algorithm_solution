@@ -212,9 +212,7 @@ class Solution {
 
     public static int[] solution20(int []arr) {
 
-
         arr.toString().replaceAll("[0]{2,}","0");
-
         return arr;
     }
 
@@ -324,8 +322,6 @@ class Solution {
         int[] arr = {-4};
         //System.out.println("흠"+('0'-(-1)));
         System.out.println("sol24: "+(Arrays.toString(solution24(arr))));
-
-
     }
 
 }
